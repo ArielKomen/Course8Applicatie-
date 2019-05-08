@@ -1,0 +1,20 @@
+<html><body> 
+hello world
+<form action="/input_a" method="POST">
+<input type="list" name="input_a"><br>
+<button type="submit">Submit </button>
+</form>
+<table style ="width: 80%">
+{% if input %}
+	{% for regel in input %}
+		<tr>
+		<td>
+		{{ regel|safe }}
+		<!--de |safe in regel zorgt ervoor dat alles met een <b></b> bold wordt, ik weet niet hoe maar het werkt -->
+		</tr>
+		</td>
+	{% endfor %}
+{% endif %}
+</table> 
+</body></html>
+

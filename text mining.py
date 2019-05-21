@@ -159,7 +159,9 @@ def get_info(idlist, export_lijst, bitter_gourd_ziekte):
                 lijst.append(bitter_gourd_ziekte)
                 lijst.append(item["TI"])
                 export_lijst.append(lijst)
+                print(item["DP"])
                 lijst = []
+                
         return export_lijst
     except:
         print(item)
@@ -167,7 +169,7 @@ def get_info(idlist, export_lijst, bitter_gourd_ziekte):
 
 def schrijf_data_weg(export_lijst):
     # in deze methode de data wegschrijven naar een tekstbestandje
-    bestand = open("/home/cole/Documents/course_8/weektaken/textmining applicatie/data/export", "a")
+    bestand = open("/home/cole/Documents/course_8/weektaken/textmining applicatie/data/export bitter gourd en ziektes", "a")
 
     for lijst in export_lijst:
         regel = lijst[0]+";"+lijst[1]+";"+lijst[2]+";"+lijst[3]+";"+lijst[4]+"\n"

@@ -65,6 +65,10 @@ def pubmed_zoeken(d2_lijst):
     
     #print("zoveel hits in totaal hebben meer dan 10000 artikelen: "+str(opteller))
     visualiseer_aantal_artikelen(lijst_met_getallen, tweede_lijst_met_getallen)
+<<<<<<< master
+=======
+    opteller = 0
+>>>>>>> Ariel zijn troep
     
     # in deze forloop de data in een bestandje zetten zodat je het later weer kan gebruiken ergens anders voor.
     for record in lijst_met_records:
@@ -81,7 +85,11 @@ def visualiseer_aantal_artikelen(lijst_met_getallen, tweede_lijst_met_getallen):
     
     if len(lijst) == len(tweede_lijst_met_getallen):
         plt.scatter(tweede_lijst_met_getallen,lijst)
+<<<<<<< master
         plt.yticks(np.arange(min(lijst), max(lijst)+1, 100.0))
+=======
+        plt.yticks(np.arange(min(lijst), max(lijst)+1, 1000.0))
+>>>>>>> Ariel zijn troep
         plt.xlabel("verschillende termen")
         plt.ylabel("hoeveelheid gevonden artikelen")
         plt.title("hoeveelheid artikelen met termen")

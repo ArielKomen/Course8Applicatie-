@@ -60,7 +60,7 @@ def pubmed_zoeken(d2_lijst):
         if int(count) > 0:
             lijst_met_records = get_artikelen(zoekterm, count, lijst_met_records)
             time.sleep(sleep_time)
-            print("zoveel hits: "+str(count)+"en bij deze term: "+ zoekterm)
+            print("zoveel hits: "+str(count)+" en bij deze term: "+ zoekterm)
         else:
             print("deze zoekterm heeft geen hits: "+zoekterm)
     

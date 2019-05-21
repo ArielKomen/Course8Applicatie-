@@ -65,23 +65,14 @@ def pubmed_zoeken(d2_lijst):
             print("deze zoekterm heeft geen hits: "+zoekterm)
     
     #print("zoveel hits in totaal hebben meer dan 10000 artikelen: "+str(opteller))
-    visualiseer_aantal_artikelen(lijst_met_getallen, tweede_lijst_met_getallen)
+    #visualiseer_aantal_artikelen(lijst_met_getallen, tweede_lijst_met_getallen)
 
     # maak de export lijst.
     export_lijst = make_export_lijst(lijst_met_records, lijst_met_bitter_gourd_ziektes)
 
     return export_lijst
     
-def make_export_lijst(lijst_met_records, lijst_met_ziektes_compound):
-    export_lijst = []
-    opteller = 0
-    # in deze forloop de data in een bestandje zetten zodat je het later weer kan gebruiken ergens anders voor.
-    for record in lijst_met_records:
-        export_lijst = get_info(record["IdList"], export_lijst, lijst_met_ziektes_compounds[opteller])
-        #print(lijst_met_bitter_gourd_ziektes[opteller])
-        opteller +=1
 
-    return export_lijst
 
 def visualiseer_aantal_artikelen(lijst_met_getallen, tweede_lijst_met_getallen):
     lijst = []
@@ -140,7 +131,16 @@ def make_bitter_gourd_disease_list(d2_lijst):
             lijst_met_bitter_gourd_ziektes.append(zoekterm)
     return lijst_met_bitter_gourd_ziektes
 
+def make_export_lijst(lijst_met_records, lijst_met_ziektes_compounds):
+    export_lijst = []
+    opteller = 0
+    # in deze forloop de data in een bestandje zetten zodat je het later weer kan gebruiken ergens anders voor.
+    for record in lijst_met_records:
+        export_lijst = get_info(record["IdList"], export_lijst, lijst_met_ziektes_compounds[opteller])
+        #print(lijst_met_bitter_gourd_ziektes[opteller])
+        opteller +=1
 
+    return export_lijst
 
 def get_info(idlist, export_lijst, bitter_gourd_ziekte):
     # in deze functie per id alles in een lijst zetten.
@@ -148,23 +148,23 @@ def get_info(idlist, export_lijst, bitter_gourd_ziekte):
     item_handle = Entrez.efetch(db="pubmed", id=idlist, rettype="medline", retmode="text")
     records = Medline.parse(item_handle)
     try:
-        for item in records:
-            if item["Supp"] != " ed id parameter is empty.":
-                # item[PMID] de pubmed identifier
-                # item[TI] de record title, dus hoe het heet
-                # item["DP"] de datum dat het is uitgekomen
-                lijst.append(item["PMID"])
-                lijst.append(item["DP"])
-                lijst.append("na")
-                lijst.append(bitter_gourd_ziekte)
-                lijst.append(item["TI"])
-                export_lijst.append(lijst)
-                print(item["DP"])
-                lijst = []
+        for item in records:        
+            # item[PMID] de pubmed identifier
+            # item[TI] de record title, dus hoe het heet
+            # item["DP"] de datum dat het is uitgekomen
+            lijst.append(item["PMID"])
+            lijst.append(item["DP"])
+            lijst.append("na")
+            lijst.append(bitter_gourd_ziekte)
+            lijst.append(item["TI"])
+            export_lijst.append(lijst)
+            lijst = []
                 
         return export_lijst
     except:
-        print(item)
+        print("er is een error opgetreden bij: "+item["PMID"])
+        lijst.append("error occured;na;na;na;na")
+        export_lijst.append(lijst)
         return export_lijst
 
 def schrijf_data_weg(export_lijst):

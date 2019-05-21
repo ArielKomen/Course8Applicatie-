@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="webpage.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<div id="Home" class="tabcontent">
+  <h1>Home</h1>
+  <p>Welcome to the home page! This is where you'll find the main application.</p>
+</div>
+
+<div id="Help" class="tabcontent">
+  <h1>Help</h1>
+  <p>Welcome to the help page! This is where we'll explain how the home page works.</p> 
+</div>
+
+<div id="Disclaimer" class="tabcontent">
+  <h1>Disclaimer</h1>
+  <p>Welcome to the disclaimer page! This is where you'll find our disclaimers.</p>
+</div>
+
+<div id="About" class="tabcontent">
+  <h1>About</h1>
+  <p>Welcome to the about page! This is where you'll find some extra information.</p>
+</div>
+
+<button class="tablink" onclick="openTab('Home', this, '#41B3A3')" id="defaultOpen">Home</button>
+<button class="tablink" onclick="openTab('Help', this, '#4151B3')">Help</button>
+<button class="tablink" onclick="openTab('Disclaimer', this, '#A341B3')">Disclaimer</button>
+<button class="tablink" onclick="openTab('About', this, '#B34151')">About</button>
+
+<script>
+function openTab(cityName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(cityName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+
+}
+
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 

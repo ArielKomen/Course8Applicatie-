@@ -38,7 +38,7 @@ def pubmed_zoeken(d2_lijst):
     lijst_met_records = []
     opteller = 0
     sleep_time = 0
-    export_lijst = []
+    
     lijst_met_getallen = []
     tweede_lijst_met_getallen = []
     
@@ -49,7 +49,7 @@ def pubmed_zoeken(d2_lijst):
 
     Entrez.email = "A.komen@student.han.nl"
 
-    for zoekterm in lijst_met_ziektes_compounds[0:]:
+    for zoekterm in lijst_met_bitter_gourd_ziektes[0:]:
         count = get_count(zoekterm)
         time.sleep(sleep_time)
         
@@ -60,12 +60,21 @@ def pubmed_zoeken(d2_lijst):
         if int(count) > 0:
             lijst_met_records = get_artikelen(zoekterm, count, lijst_met_records)
             time.sleep(sleep_time)
+            print("zoveel hits: "+str(count)+" en bij deze term: "+ zoekterm)
         else:
             print("deze zoekterm heeft geen hits: "+zoekterm)
     
     #print("zoveel hits in totaal hebben meer dan 10000 artikelen: "+str(opteller))
     visualiseer_aantal_artikelen(lijst_met_getallen, tweede_lijst_met_getallen)
+
+    # maak de export lijst.
+    export_lijst = make_export_lijst(lijst_met_records, lijst_met_bitter_gourd_ziektes)
+
+    return export_lijst
     
+def make_export_lijst(lijst_met_records, lijst_met_ziektes_compound):
+    export_lijst = []
+    opteller = 0
     # in deze forloop de data in een bestandje zetten zodat je het later weer kan gebruiken ergens anders voor.
     for record in lijst_met_records:
         export_lijst = get_info(record["IdList"], export_lijst, lijst_met_ziektes_compounds[opteller])
@@ -81,6 +90,9 @@ def visualiseer_aantal_artikelen(lijst_met_getallen, tweede_lijst_met_getallen):
     
     if len(lijst) == len(tweede_lijst_met_getallen):
         plt.scatter(tweede_lijst_met_getallen,lijst)
+
+        plt.yticks(np.arange(min(lijst), max(lijst)+1, 1000.0))
+
         plt.yticks(np.arange(min(lijst), max(lijst)+1, 100.0))
         plt.xlabel("verschillende termen")
         plt.ylabel("hoeveelheid gevonden artikelen")
@@ -147,7 +159,9 @@ def get_info(idlist, export_lijst, bitter_gourd_ziekte):
                 lijst.append(bitter_gourd_ziekte)
                 lijst.append(item["TI"])
                 export_lijst.append(lijst)
+                print(item["DP"])
                 lijst = []
+                
         return export_lijst
     except:
         print(item)
@@ -155,7 +169,7 @@ def get_info(idlist, export_lijst, bitter_gourd_ziekte):
 
 def schrijf_data_weg(export_lijst):
     # in deze methode de data wegschrijven naar een tekstbestandje
-    bestand = open("/home/cole/Documents/course_8/weektaken/textmining applicatie/data/export ziektes en compounds", "a")
+    bestand = open("/home/cole/Documents/course_8/weektaken/textmining applicatie/data/export bitter gourd en ziektes", "a")
 
     for lijst in export_lijst:
         regel = lijst[0]+";"+lijst[1]+";"+lijst[2]+";"+lijst[3]+";"+lijst[4]+"\n"

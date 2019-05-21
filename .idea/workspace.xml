@@ -68,11 +68,6 @@
               <item name="Course8Applicatie-" type="b2602c69:ProjectViewProjectNode" />
               <item name="Course8Applicatie-" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Course8Applicatie-" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Course8Applicatie-" type="462c0819:PsiDirectoryNode" />
-              <item name="afvinkopdrachten_verzamelmap" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -118,15 +113,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558357226282</updated>
-      <workItem from="1558357228458" duration="6860000" />
+      <workItem from="1558357228458" duration="7200000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6860000" />
+    <option name="totallyTimeSpent" value="7200000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-4" width="1857" height="1085" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18684356" />

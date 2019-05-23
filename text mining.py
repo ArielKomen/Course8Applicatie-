@@ -6,7 +6,7 @@ import time
 def main():
     d2_lijst = bestanden_inlezen()
     export_lijst = pubmed_zoeken(d2_lijst)
-    #schrijf_data_weg(export_lijst)
+    schrijf_data_weg(export_lijst)
 def bestanden_inlezen():
     """
     ziektes zijn lijst[0]
@@ -37,7 +37,7 @@ def generiek_bestand_inlezen(bestandspad):
 def pubmed_zoeken(d2_lijst):
     lijst_met_records = []
     opteller = 0
-    sleep_time = 0
+    sleep_time = 10
     lijst_met_geen_hits = []
     lijst_met_getallen = []
     tweede_lijst_met_getallen = []
@@ -49,7 +49,7 @@ def pubmed_zoeken(d2_lijst):
 
     Entrez.email = "A.komen@student.han.nl"
 
-    for zoekterm in lijst_met_bitter_gourd_ziektes[0:4]:
+    for zoekterm in lijst_met_bitter_gourd_ziektes[0:]:
         count = get_count(zoekterm)
         time.sleep(sleep_time)
         

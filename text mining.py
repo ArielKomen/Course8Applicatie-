@@ -37,8 +37,8 @@ def generiek_bestand_inlezen(bestandspad):
 def pubmed_zoeken(d2_lijst):
     lijst_met_records = []
     opteller = 0
-    sleep_time = 0
-    
+    sleep_time = 10
+    lijst_met_geen_hits = []
     lijst_met_getallen = []
     tweede_lijst_met_getallen = []
     
@@ -63,12 +63,13 @@ def pubmed_zoeken(d2_lijst):
             print("zoveel hits: "+str(count)+" en bij deze term: "+ zoekterm)
         else:
             print("deze zoekterm heeft geen hits: "+zoekterm)
+            lijst_met_geen_hits.append(zoekterm)
     
     #print("zoveel hits in totaal hebben meer dan 10000 artikelen: "+str(opteller))
     #visualiseer_aantal_artikelen(lijst_met_getallen, tweede_lijst_met_getallen)
 
     # maak de export lijst.
-    export_lijst = make_export_lijst(lijst_met_records, lijst_met_bitter_gourd_ziektes)
+    export_lijst = make_export_lijst(lijst_met_records, lijst_met_bitter_gourd_ziektes, lijst_met_geen_hits)
 
     return export_lijst
     
@@ -131,10 +132,20 @@ def make_bitter_gourd_disease_list(d2_lijst):
             lijst_met_bitter_gourd_ziektes.append(zoekterm)
     return lijst_met_bitter_gourd_ziektes
 
-def make_export_lijst(lijst_met_records, lijst_met_ziektes_compounds):
+
+def remove_items_not_found(lijst_met_ziektes_compounds, lijst_met_geen_hits):
+    # in deze functie alle items die niet gevonden zijn uit de lijst halen.
+    for item in lijst_met_geen_hits:
+        if item in lijst_met_ziektes_compounds:
+            lijst_met_ziektes_compounds.remove(item)
+
+    return lijst_met_ziektes_compounds
+
+def make_export_lijst(lijst_met_records, lijst_met_ziektes_compounds, lijst_met_geen_hits):
     export_lijst = []
     opteller = 0
     # in deze forloop de data in een bestandje zetten zodat je het later weer kan gebruiken ergens anders voor.
+    lijst_met_ziektes_compounds = remove_items_not_found(lijst_met_ziektes_compounds, lijst_met_geen_hits)
     for record in lijst_met_records:
         export_lijst = get_info(record["IdList"], export_lijst, lijst_met_ziektes_compounds[opteller])
         #print(lijst_met_bitter_gourd_ziektes[opteller])

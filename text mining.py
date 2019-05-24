@@ -37,19 +37,16 @@ def generiek_bestand_inlezen(bestandspad):
 def pubmed_zoeken(d2_lijst):
     lijst_met_records = []
     opteller = 0
-    sleep_time = 10
+    sleep_time = 0
     lijst_met_geen_hits = []
     lijst_met_getallen = []
     tweede_lijst_met_getallen = []
-    
 
-    #je wilt een lijst hebben met bitter gourd en ziektes, ziektes met compounds. Dus die moet je eerst maken.
-    lijst_met_bitter_gourd_ziektes = make_bitter_gourd_disease_list(d2_lijst)
-    lijst_met_ziektes_compounds = make_disease_compounds_list(d2_lijst)
+    data_lijst = kies_data_lijst(d2_lijst)
 
     Entrez.email = "A.komen@student.han.nl"
 
-    for zoekterm in lijst_met_bitter_gourd_ziektes[0:]:
+    for zoekterm in data_lijst[0:]:
         count = get_count(zoekterm)
         time.sleep(sleep_time)
         
@@ -69,10 +66,18 @@ def pubmed_zoeken(d2_lijst):
     #visualiseer_aantal_artikelen(lijst_met_getallen, tweede_lijst_met_getallen)
 
     # maak de export lijst.
-    export_lijst = make_export_lijst(lijst_met_records, lijst_met_bitter_gourd_ziektes, lijst_met_geen_hits)
+    export_lijst = make_export_lijst(lijst_met_records, data_lijst, lijst_met_geen_hits)
 
     return export_lijst
-    
+def kies_data_lijst(d2_lijst):
+    # je wilt een lijst hebben met bitter gourd en ziektes, ziektes met compounds. Dus die moet je eerst maken.
+    data_lijst = []
+    lijst_met_bitter_gourd_ziektes = make_bitter_gourd_disease_list(d2_lijst)
+    lijst_met_ziektes_compounds = make_disease_compounds_list(d2_lijst)
+    # in deze regel kan je makkelijk veranderen welke lijst van mogelijkheden je wilt gebruiken.
+    data_lijst = lijst_met_bitter_gourd_ziektes
+
+    return data_lijst
 
 
 def visualiseer_aantal_artikelen(lijst_met_getallen, tweede_lijst_met_getallen):
@@ -133,27 +138,27 @@ def make_bitter_gourd_disease_list(d2_lijst):
     return lijst_met_bitter_gourd_ziektes
 
 
-def remove_items_not_found(lijst_met_ziektes_compounds, lijst_met_geen_hits):
+def remove_items_not_found(data_lijst, lijst_met_geen_hits):
     # in deze functie alle items die niet gevonden zijn uit de lijst halen.
     for item in lijst_met_geen_hits:
-        if item in lijst_met_ziektes_compounds:
-            lijst_met_ziektes_compounds.remove(item)
+        if item in data_lijst:
+            data_lijst.remove(item)
 
-    return lijst_met_ziektes_compounds
+    return data_lijst
 
-def make_export_lijst(lijst_met_records, lijst_met_ziektes_compounds, lijst_met_geen_hits):
+def make_export_lijst(lijst_met_records, data_lijst, lijst_met_geen_hits):
     export_lijst = []
     opteller = 0
     # in deze forloop de data in een bestandje zetten zodat je het later weer kan gebruiken ergens anders voor.
-    lijst_met_ziektes_compounds = remove_items_not_found(lijst_met_ziektes_compounds, lijst_met_geen_hits)
+    data_lijst = remove_items_not_found(data_lijst, lijst_met_geen_hits)
     for record in lijst_met_records:
-        export_lijst = get_info(record["IdList"], export_lijst, lijst_met_ziektes_compounds[opteller])
+        export_lijst = get_info(record["IdList"], export_lijst, data_lijst[opteller])
         #print(lijst_met_bitter_gourd_ziektes[opteller])
         opteller +=1
 
     return export_lijst
 
-def get_info(idlist, export_lijst, bitter_gourd_ziekte):
+def get_info(idlist, export_lijst, term):
     # in deze functie per id alles in een lijst zetten.
     lijst = []
     item_handle = Entrez.efetch(db="pubmed", id=idlist, rettype="medline", retmode="text")
@@ -166,7 +171,7 @@ def get_info(idlist, export_lijst, bitter_gourd_ziekte):
             lijst.append(item["PMID"])
             lijst.append(item["DP"])
             lijst.append("na")
-            lijst.append(bitter_gourd_ziekte)
+            lijst.append(term)
             lijst.append(item["TI"])
             export_lijst.append(lijst)
             lijst = []

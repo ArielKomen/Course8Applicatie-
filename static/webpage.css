@@ -2,6 +2,8 @@ body {font-family: "Lato", sans-serif;}
 body{
 	background-color: #cccccc;
 }
+
+/* dit is de css voor de hoofdtabjes-------------------------------------- */
 .tablink {
   background-color: #555;
   color: white;
@@ -30,3 +32,6 @@ body{
 #Help {background-color:#4151B3;}
 #Disclaimer {background-color:#A341B3;}
 #About {background-color:#B34151;}
+
+
+

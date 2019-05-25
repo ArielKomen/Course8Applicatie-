@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="webpage.css">
+<!--     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">-->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+<link rel="stylesheet" href="{{ url_for('static', filename='webpage.css') }}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -10,7 +17,19 @@
 <div id="Home" class="tabcontent">
   <h1>Home</h1>
   <p>Welcome to the home page! This is where you'll find the main application.</p>
+	<!--in de Home pagina willen we heel veel dingen gaan doen. De uitklabare  tabel, 
+	een paar radiobuttons om te laten weten of er ziektes of compounds gevisualiseerd moeten worden,
+	een sunburst diagram(verkrijgen vanuit D3(data driven documents)) en
+	als laatste een tabel met daarin artikelen die de gebruiker gevonden heeft, je zou in deze tabel artikelen moeten kunnen 
+	aanvinken die je wil exporteren. Het liefst dit doen op een manier zoals uniprot baskets gebruikt.  
+	 -->
+	<!-- code om een uitklapbare lijst te maken, soort van-->
 </div>
+	<!-- code om radiobuttons te maken-->
+	<!-- code om de sunburst diagram te maken-->    
+<!--  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> -->
+	<!-- code om een tabel te maken-->
+
 
 <div id="Help" class="tabcontent">
   <h1>Help</h1>
@@ -50,6 +69,23 @@ function openTab(cityName,elmnt,color) {
 
 document.getElementById("defaultOpen").click();
 </script>
+
+<!--hier staat de code voor een uitklapbare lijst -->
+
+<form action="/" method="GET">
+<input type="list" name="input"><br>
+</form>
+
+{% for regel in input %}
+	{{ regel|safe }}		
+	<!--de |safe in regel zorgt ervoor dat alles met een <b></b> bold wordt, ik weet niet hoe maar het werkt -->
+{% endfor %}
+
+
+
+
+  
+
    
 </body>
 </html> 

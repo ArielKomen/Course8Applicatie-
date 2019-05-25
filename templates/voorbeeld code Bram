@@ -1,0 +1,120 @@
+
+def main():
+    alleslijst = lijsten()
+    a = remove_empty_lists(alleslijst)
+    print(a)
+    print("")    
+    zooi(alleslijst)
+    
+def lijsten():
+    alleslijst = []
+    familielijst = [['familie1','1'],['familie2','2'],['familie3','3']]
+    geslachtlijst = [["geslacht1","1","1"],["geslacht2","2","3"],['geslacht3','3','1']]
+    soortlijst = [["soort1","1","2"],["soort2","2","3"],["soort3","3","1"]]
+    
+    i=0
+    
+    for waarde in familielijst:
+#Iedere familie afgaan
+        alleslijst.append([waarde[0]])
+#De naam van de familie in de lijst stoppen
+        k=1
+#Een counter zetten voor het appenden van de soorten die voor iedere familie weer
+#op 1 moet worden gezet
+        for regel in geslachtlijst:
+#Ieder geslacht afgaan            
+            if waarde[1] == regel[2]:            
+#kijk of de index van het geslacht gelijk is aan het familie_id                
+                alleslijst[i].append([regel[0]])
+#Als dat zo is stop dan de naam van het geslacht bij de bijbehorende familie                
+                for ding in soortlijst:
+#Ga iedere soort langs            
+                    if ding[2] == regel[1]:
+#Kijk of de index van de soort gelijk is aan het geslacht_id     
+                        alleslijst[i][k].append([])
+#Stop een lege lijst bij de nieuwe soort, deze maakt teveel lijsten omdat alle soorten in 1
+#lijst komen te staan per geslacht maar alle lege lijsten worden in een andere
+#functie verwijderd                        
+                        alleslijst[i][k][1].append(ding[0])  
+#Stop de naam van de soort bij het geslacht waar het bij hoort                    
+                k+=1
+#Verhoog de K counter met 1. Deze counter houd per familie bij in
+#welk geslacht de soort ge append moet worden                     
+        i+= 1        
+#Verhoog de i counter deze houd bij hoeveel families er zijn     
+    
+                
+                
+    return(alleslijst)
+    
+    
+def remove_empty_lists(l):
+    keep_going = True
+    prev_l = l
+    while keep_going:
+        #call remover on the list
+        new_l = remover(prev_l)
+        #are they identical objects?
+        if new_l == prev_l:
+            keep_going = False
+        #set prev to new
+        prev_l = new_l
+    #return the result
+    return new_l
+
+
+#function
+def remover(l):
+    #new list
+    newlist = []
+    #loop over elements
+    for i in l:
+        #pdb.set_trace()
+        #is element a non-empty list? then call self on it
+        if isinstance(i, list) and len(i) != 0:
+            newlist.append(remover(i))
+        #if not a list
+        if not isinstance(i, list):
+            newlist.append(i)
+    
+    #return newlist
+    return newlist
+    
+    
+def zooi(alleslijst):
+    inhoud = ''
+    for item in alleslijst:
+        inhoud += '<ul>'
+        inhoud += '<li>'
+        inhoud += item[0]
+        #print(item)
+        inhoud += '</li>'
+        for item1 in item:
+            if item1[1] != None:
+                inhoud += '<ul>'
+            
+            if len(item1[0])!=1:
+               
+                inhoud += '<li>'
+                print(item1[0])
+                inhoud += item1[0]
+                inhoud += '</li> '
+                
+                for item2 in item1:
+                    print(item2)
+                    if item2 != None:
+                        inhoud += '<ul>'
+                        
+                    if len(item2[0]) != 1:
+                        inhoud += '<li>'
+                        inhoud+= item2[0]
+                        inhoud += '</li>'
+                inhoud += '</ul>'
+        inhoud += '</ul>'
+    inhoud += '</ul>'
+    
+    print(inhoud)
+    
+main()
+
+ 

@@ -75,7 +75,7 @@ def kies_data_lijst(d2_lijst):
     lijst_met_bitter_gourd_ziektes = make_bitter_gourd_disease_list(d2_lijst)
     lijst_met_ziektes_compounds = make_disease_compounds_list(d2_lijst)
     # in deze regel kan je makkelijk veranderen welke lijst van mogelijkheden je wilt gebruiken.
-    data_lijst = lijst_met_bitter_gourd_ziektes
+    data_lijst = lijst_met_ziektes_compounds
 
     return data_lijst
 
@@ -121,7 +121,7 @@ def make_disease_compounds_list(d2_lijst):
         # Dan de compounds, dat is lijst[1]
             for tweede_item in d2_lijst[1][0:]:
                 if tweede_item != "":
-                    zoekterm = eerste_item + " AND " + tweede_item
+                    zoekterm = '\"'+eerste_item+ '\"' + " AND " + '\"' +tweede_item+ '\"'
                     lijst_met_ziektes_compounds.append(zoekterm)
     return lijst_met_ziektes_compounds
 
@@ -133,7 +133,7 @@ def make_bitter_gourd_disease_list(d2_lijst):
         if eerste_item != "":
         # Dan de bitter gourd, dat is lijst[1]
         #for tweede_item in d2_lijst[2][0]:
-            zoekterm = eerste_item + " AND " + d2_lijst[2][1]
+            zoekterm = '\"'+eerste_item +'\"'+ " AND " + d2_lijst[2][1]
             lijst_met_bitter_gourd_ziektes.append(zoekterm)
     return lijst_met_bitter_gourd_ziektes
 
@@ -185,7 +185,7 @@ def get_info(idlist, export_lijst, term):
 
 def schrijf_data_weg(export_lijst):
     # in deze methode de data wegschrijven naar een tekstbestandje
-    bestand = open("/home/cole/Documents/course_8/weektaken/textmining applicatie/data/export bitter gourd en ziektes", "a")
+    bestand = open("/home/cole/Documents/course_8/weektaken/textmining applicatie/data/export ziektes en compounds", "a")
 
     for lijst in export_lijst:
         regel = lijst[0]+";"+lijst[1]+";"+lijst[2]+";"+lijst[3]+";"+lijst[4]+"\n"

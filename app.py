@@ -1,28 +1,46 @@
 from flask import Flask, render_template, request
-
+import option
+#globaal een object aanmaken om de optie te onthouden van de gebruiker
+optie = option.set_boolean(False)
 app = Flask(__name__)
 
-@app.route('/<output>', methods = ['POST'])
+@app.route('/output', methods = ['POST'])
 def verwerk_output(output):
-    print(request.form["submit"])
-    return output
+    if request.method == 'POST':
+        print(request.form["submit"])
+        combinatie_lijst = maak_combinatie_lijst(optie)
+        html_lijst = zooi(combinatie_lijst)
+        return render_template('webpage.html', input=html_lijst)
     #eerst achterhalen welke knop is ingedrukt.
 
 
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
 def main():
-    combinatie_lijst = maak_combinatie_lijst()
-    html_lijst = zooi(combinatie_lijst)
+    if request.method == 'POST':
 
-    return render_template('webpage.html', input=html_lijst)
+        user_answer = request.form['options']
+        if user_answer == "Compound":
+            optie.set_boolean(True)
+        else:
+            optie.set_boolean(False)
+        #print(user_answer)
+        combinatie_lijst = maak_combinatie_lijst(optie)
+        html_lijst = zooi(combinatie_lijst)
+        return render_template('webpage.html', input=html_lijst)
+    if request.method == 'GET':
+        #optie(False)
 
-def maak_combinatie_lijst():
+        combinatie_lijst = maak_combinatie_lijst(optie)
+        html_lijst = zooi(combinatie_lijst)
+        return render_template('webpage.html', input=html_lijst)
+
+def maak_combinatie_lijst(optie):
     compound_data = "/home/cole/Documents/course_8/weektaken/textmining applicatie/data/compound lijst"
     ziekte_data = "/home/cole/Documents/course_8/weektaken/textmining applicatie/data/ziekte lijst"
-    boolean = False
 
-    if boolean == False:
+
+    if optie.get_boolean == False:
         combinatie_lijst = make_compound_ziekte_combinatie_lijst(compound_data, ziekte_data)
     else:
         combinatie_lijst = make_ziekte_compound_combinatie_lijst(compound_data, ziekte_data)

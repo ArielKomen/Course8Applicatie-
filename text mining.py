@@ -121,7 +121,8 @@ def make_disease_compounds_list(d2_lijst):
         # Dan de compounds, dat is lijst[1]
             for tweede_item in d2_lijst[1][0:]:
                 if tweede_item != "":
-                    zoekterm = '\"'+eerste_item+ '\"' + " AND " + '\"' +tweede_item+ '\"'
+                    zoekterm = '\
+                    "'+eerste_item+ '\"' + " AND " + '\"' +tweede_item+ '\"'
                     lijst_met_ziektes_compounds.append(zoekterm)
     return lijst_met_ziektes_compounds
 

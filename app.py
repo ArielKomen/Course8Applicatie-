@@ -1,35 +1,40 @@
 from flask import Flask, render_template, request
-import option
-#globaal een object aanmaken om de optie te onthouden van de gebruiker
-optie = option.set_boolean(False)
+from option import Option
+#globaal een object aanmaken om de optie van de gebruiker te onthouden van de
+optie = Option(True)
+#optie = option.set_boolean(False)
+
+
+
 app = Flask(__name__)
 
 @app.route('/output', methods = ['POST'])
-def verwerk_output(output):
+def verwerk_output(naam):
     if request.method == 'POST':
-        print(request.form["submit"])
+        print(request.args["naam"])
+
         combinatie_lijst = maak_combinatie_lijst(optie)
         html_lijst = zooi(combinatie_lijst)
         return render_template('webpage.html', input=html_lijst)
-    #eerst achterhalen welke knop is ingedrukt.
 
 
 
 @app.route('/', methods=['GET', 'POST'])
 def main():
     if request.method == 'POST':
-
+        #een lijst van compounds is true
+        #een lijst van diseases is false
         user_answer = request.form['options']
         if user_answer == "Compound":
             optie.set_boolean(True)
         else:
             optie.set_boolean(False)
         #print(user_answer)
+        print(optie.get_boolean())
         combinatie_lijst = maak_combinatie_lijst(optie)
         html_lijst = zooi(combinatie_lijst)
         return render_template('webpage.html', input=html_lijst)
     if request.method == 'GET':
-        #optie(False)
 
         combinatie_lijst = maak_combinatie_lijst(optie)
         html_lijst = zooi(combinatie_lijst)
@@ -40,7 +45,7 @@ def maak_combinatie_lijst(optie):
     ziekte_data = "/home/cole/Documents/course_8/weektaken/textmining applicatie/data/ziekte lijst"
 
 
-    if optie.get_boolean == False:
+    if optie.get_boolean() == False:
         combinatie_lijst = make_compound_ziekte_combinatie_lijst(compound_data, ziekte_data)
     else:
         combinatie_lijst = make_ziekte_compound_combinatie_lijst(compound_data, ziekte_data)
@@ -116,7 +121,10 @@ def zooi(combinatie_lijst):
                 #<form action="/input_a" method="POST">
                 #html_lijst.append('<input type="submit" name="output" value="output_'+str(speciale_opteller)+'" >')
                 #html_lijst.append('<input type="button" name="ouput_'+str(speciale_opteller)+'" >')
-                html_lijst.append('<button type="button" class="btn btn-secondary">'+woord+'</button>')
+                html_lijst.append('<form action="/output" method="POST">')
+                #html_lijst.append('<input type="button" name="'+list(item.items())[0][0]+'_'+woord+' value='+str(speciale_opteller)+'">')
+                html_lijst.append('<button type="submit" class="btn btn-secondary" value="'+list(item.items())[0][0]+'_'+woord+'">'+woord+'</button>')
+                html_lijst.append('</form>')
                 #html_lijst.append(woord)
                 #html_lijst.append('</li>')
                 speciale_opteller += 1

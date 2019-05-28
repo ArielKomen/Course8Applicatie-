@@ -1,4 +1,6 @@
 class Option:
+    #boolean = False
+
     def __init__(self, boolean):
         self.__boolean = boolean
 

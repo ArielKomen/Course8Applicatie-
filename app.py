@@ -8,10 +8,12 @@ optie = Option(True)
 
 app = Flask(__name__)
 
-@app.route('/output', methods = ['POST'])
-def verwerk_output(naam):
-    if request.method == 'POST':
-        print(request.args["naam"])
+@app.route('/output', methods = ['POST','GET'])
+def output():
+    if request.method == 'GET':
+        combination_name = request.args['combination_name']
+        combination_value = request.args['combination_value']
+        print(combination_name, combination_value)
 
         combinatie_lijst = maak_combinatie_lijst(optie)
         html_lijst = zooi(combinatie_lijst)
@@ -121,8 +123,14 @@ def zooi(combinatie_lijst):
                 #<form action="/input_a" method="POST">
                 #html_lijst.append('<input type="submit" name="output" value="output_'+str(speciale_opteller)+'" >')
                 #html_lijst.append('<input type="button" name="ouput_'+str(speciale_opteller)+'" >')
-                html_lijst.append('<form action="/output" method="POST">')
-                #html_lijst.append('<input type="button" name="'+list(item.items())[0][0]+'_'+woord+' value='+str(speciale_opteller)+'">')
+                html_lijst.append('<form action="/output" method="GET">')
+                #html_lijst.append('<input type="text" name="'+list(item.items())[0][0]+'_'+woord+' value='+str(speciale_opteller)+'">')
+                html_lijst.append('<div class="hidden">')
+                aapje = list(item.items())[0][0]+'_'+woord
+                html_lijst.append('<input type="text" name="combination_name" value="' + aapje + '">')
+                nootje = str(speciale_opteller)
+                html_lijst.append('<input type="text" name="combination_value" value="' + nootje + '">')
+                html_lijst.append('</div>')
                 html_lijst.append('<button type="submit" class="btn btn-secondary" value="'+list(item.items())[0][0]+'_'+woord+'">'+woord+'</button>')
                 html_lijst.append('</form>')
                 #html_lijst.append(woord)

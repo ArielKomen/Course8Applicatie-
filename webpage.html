@@ -1,55 +1,68 @@
 <!DOCTYPE html>
 <html>
+<link rel="icon" type="image/png" href="melon.png">
 <head>
-<link rel="stylesheet" href="webpage.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-<div id="Home" class="tabcontent">
-  <h1>Home</h1>
-  <p>Welcome to the home page! This is where you'll find the main application.</p>
+<div id="Home" class="upperbar">
+  <h1><center>Home</center></h1>
+  <p><center>Welcome to the home page! This is where you'll find the main application.</center></p>
 </div>
 
-<div id="Help" class="tabcontent">
-  <h1>Help</h1>
-  <p>Welcome to the help page! This is where we'll explain how the home page works.</p> 
-</div>
+<button class="tablink" id="defaultOpen"><li><a href="webpage.html"><span>Home</span></a></li></button>
+<button class="tablink" ><li><a href="Help.html"><span>Help</span></a></li></button>
+<button class="tablink" ><li><aS href="Disclaimer.html"><span>Disclaimer</span></a></li></button>
+<button class="tablink" ><li><a href="About.html"><span>About</span></a></li></button>
 
-<div id="Disclaimer" class="tabcontent">
-  <h1>Disclaimer</h1>
-  <p>Welcome to the disclaimer page! This is where you'll find our disclaimers.</p>
-</div>
 
-<div id="About" class="tabcontent">
-  <h1>About</h1>
-  <p>Welcome to the about page! This is where you'll find some extra information.</p>
-</div>
+<!--hier staat de code voor een uitklapbare lijst -->
 
-<button class="tablink" onclick="openTab('Home', this, '#41B3A3')" id="defaultOpen">Home</button>
-<button class="tablink" onclick="openTab('Help', this, '#4151B3')">Help</button>
-<button class="tablink" onclick="openTab('Disclaimer', this, '#A341B3')">Disclaimer</button>
-<button class="tablink" onclick="openTab('About', this, '#B34151')">About</button>
+<form action="/" method="GET">
+<input type="list" name="input"><br>
+</form>
 
-<script>
-function openTab(cityName,elmnt,color) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-  document.getElementById(cityName).style.display = "block";
-  elmnt.style.backgroundColor = color;
+{% for regel in input %}
+	{{ regel|safe }}		
+	<!--de |safe in regel zorgt ervoor dat alles met een <b></b> bold wordt, ik weet niet hoe maar het werkt -->
+{% endfor %}
 
+<style>
+body {font-family: "Lato", sans-serif;}
+body{
+	background-color: #daf1ee;
 }
 
-document.getElementById("defaultOpen").click();
-</script>
-   
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+li {
+  color: #41B3A3;
+}
+
+li span{
+  color: white;
+}
+
+.tablink:hover {
+  background-color: #41B3A3;
+}
+
+.upperbar {
+  background-color: #41B3A3;
+  padding: 10px 16px;
+}
+
+</style>
 </body>
 </html> 

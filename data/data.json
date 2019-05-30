@@ -1,1 +1,1571 @@
-{"Name": "Bitter Gourd", "disease": [{"name": "diabetes", "compounds": [{"name": "gallic acid", "value": 271}, {"name": "protocatechuic acid", "value": 43}, {"name": "gentisic acid", "value": 4}, {"name": "catechin", "value": 477}, {"name": "vanillic acid", "value": 22}, {"name": "chlorogenic acid", "value": 248}, {"name": "syringic acid", "value": 12}, {"name": "epicatechin", "value": 142}, {"name": "p-Coumaric acid", "value": 29}, {"name": "trans-Ferulic acid", "value": 2}, {"name": "sinapic acid", "value": 6}, {"name": "benzoic acid", "value": 145}, {"name": "o-Coumaric acid", "value": 2}, {"name": "trans-Cinnamic acid", "value": 3}, {"name": "4-Hydroxybenzoic acid", "value": 10}, {"name": "Catechin hydrate", "value": 1}, {"name": "Caffeic acid", "value": 159}, {"name": "Ferulic acid", "value": 124}, {"name": "Rutin", "value": 246}, {"name": "Kaempferol", "value": 173}, {"name": "Cinnamic acid", "value": 50}, {"name": "Vitamin A", "value": 617}, {"name": "Thiamin", "value": 60}, {"name": "Riboflavin", "value": 157}, {"name": "Niacin", "value": 296}, {"name": "Vitamin B6", "value": 160}, {"name": "Axit folic", "value": 121}, {"name": "Vitamin B12", "value": 104}, {"name": "Vitamin C", "value": 1102}, {"name": "Vitamin E", "value": 122}, {"name": "Vitamin K", "value": 64}]}, {"name": "digestion", "compounds": [{"name": "gallic acid", "value": 83}, {"name": "protocatechuic acid", "value": 15}, {"name": "gentisic acid", "value": 2}, {"name": "catechin", "value": 151}, {"name": "vanillic acid", "value": 19}, {"name": "chlorogenic acid", "value": 76}, {"name": "syringic acid", "value": 9}, {"name": "epicatechin", "value": 38}, {"name": "p-Coumaric acid", "value": 50}, {"name": "trans-Ferulic acid", "value": 2}, {"name": "sinapic acid", "value": 7}, {"name": "benzoic acid", "value": 41}, {"name": "trans-Cinnamic acid", "value": 7}, {"name": "4-Hydroxybenzoic acid", "value": 5}, {"name": "Caffeic acid", "value": 58}, {"name": "Ferulic acid", "value": 91}, {"name": "Rutin", "value": 55}, {"name": "Kaempferol", "value": 27}, {"name": "Cinnamic acid", "value": 29}, {"name": "Vitamin A", "value": 182}, {"name": "Thiamin", "value": 27}, {"name": "Riboflavin", "value": 94}, {"name": "Niacin", "value": 55}, {"name": "Vitamin B6", "value": 21}, {"name": "Axit folic", "value": 154}, {"name": "Vitamin B12", "value": 109}, {"name": "Vitamin C", "value": 79}, {"name": "Vitamin E", "value": 129}, {"name": "Vitamin K", "value": 62}]}, {"name": "metabolism", "compounds": [{"name": "gallic acid", "value": 2977}, {"name": "protocatechuic acid", "value": 762}, {"name": "gentisic acid", "value": 178}, {"name": "catechin", "value": 6245}, {"name": "vanillic acid", "value": 718}, {"name": "chlorogenic acid", "value": 1702}, {"name": "syringic acid", "value": 243}, {"name": "epicatechin", "value": 1637}, {"name": "p-Coumaric acid", "value": 774}, {"name": "trans-Ferulic acid", "value": 29}, {"name": "sinapic acid", "value": 191}, {"name": "benzoic acid", "value": 3750}, {"name": "o-Coumaric acid", "value": 42}, {"name": "trans-Cinnamic acid", "value": 162}, {"name": "4-Hydroxybenzoic acid", "value": 604}, {"name": "Catechin hydrate", "value": 24}, {"name": "Caffeic acid", "value": 2613}, {"name": "Ferulic acid", "value": 2138}, {"name": "Rutin", "value": 2031}, {"name": "Kaempferol", "value": 1783}, {"name": "Cinnamic acid", "value": 1037}, {"name": "Vitamin A", "value": 10000}, {"name": "Thiamin", "value": 1417}, {"name": "Riboflavin", "value": 5807}, {"name": "Niacin", "value": 3403}, {"name": "Vitamin B6", "value": 2410}, {"name": "Axit folic", "value": 10000}, {"name": "Vitamin B12", "value": 5916}, {"name": "Vitamin C", "value": 8608}, {"name": "Vitamin E", "value": 10000}, {"name": "Vitamin K", "value": 7269}]}, {"name": "cancer", "compounds": [{"name": "gallic acid", "value": 709}, {"name": "protocatechuic acid", "value": 98}, {"name": "gentisic acid", "value": 18}, {"name": "catechin", "value": 2067}, {"name": "vanillic acid", "value": 62}, {"name": "chlorogenic acid", "value": 244}, {"name": "syringic acid", "value": 52}, {"name": "epicatechin", "value": 378}, {"name": "p-Coumaric acid", "value": 103}, {"name": "trans-Ferulic acid", "value": 4}, {"name": "sinapic acid", "value": 20}, {"name": "benzoic acid", "value": 422}, {"name": "o-Coumaric acid", "value": 4}, {"name": "trans-Cinnamic acid", "value": 9}, {"name": "4-Hydroxybenzoic acid", "value": 36}, {"name": "Catechin hydrate", "value": 6}, {"name": "Caffeic acid", "value": 571}, {"name": "Ferulic acid", "value": 273}, {"name": "Rutin", "value": 364}, {"name": "Kaempferol", "value": 506}, {"name": "Cinnamic acid", "value": 156}, {"name": "Vitamin A", "value": 356}, {"name": "Thiamin", "value": 80}, {"name": "Riboflavin", "value": 535}, {"name": "Niacin", "value": 296}, {"name": "Vitamin B6", "value": 349}, {"name": "Axit folic", "value": 427}, {"name": "Vitamin B12", "value": 83}, {"name": "Vitamin C", "value": 573}, {"name": "Vitamin E", "value": 802}, {"name": "Vitamin K", "value": 110}]}, {"name": "cholesterol", "compounds": [{"name": "gallic acid", "value": 127}, {"name": "protocatechuic acid", "value": 19}, {"name": "gentisic acid", "value": 1}, {"name": "catechin", "value": 359}, {"name": "vanillic acid", "value": 21}, {"name": "chlorogenic acid", "value": 101}, {"name": "syringic acid", "value": 6}, {"name": "epicatechin", "value": 95}, {"name": "p-Coumaric acid", "value": 19}, {"name": "trans-Ferulic acid", "value": 1}, {"name": "sinapic acid", "value": 12}, {"name": "benzoic acid", "value": 71}, {"name": "o-Coumaric acid", "value": 5}, {"name": "trans-Cinnamic acid", "value": 2}, {"name": "4-Hydroxybenzoic acid", "value": 7}, {"name": "Catechin hydrate", "value": 1}, {"name": "Caffeic acid", "value": 66}, {"name": "Ferulic acid", "value": 98}, {"name": "Rutin", "value": 130}, {"name": "Kaempferol", "value": 55}, {"name": "Cinnamic acid", "value": 15}, {"name": "Vitamin A", "value": 1528}, {"name": "Thiamin", "value": 97}, {"name": "Riboflavin", "value": 231}, {"name": "Niacin", "value": 1842}, {"name": "Vitamin B6", "value": 177}, {"name": "Axit folic", "value": 879}, {"name": "Vitamin B12", "value": 475}, {"name": "Vitamin C", "value": 1281}, {"name": "Vitamin E", "value": 477}, {"name": "Vitamin K", "value": 41}]}, {"name": "cardiovascular", "compounds": [{"name": "gallic acid", "value": 190}, {"name": "protocatechuic acid", "value": 35}, {"name": "gentisic acid", "value": 4}, {"name": "catechin", "value": 587}, {"name": "vanillic acid", "value": 27}, {"name": "chlorogenic acid", "value": 129}, {"name": "syringic acid", "value": 8}, {"name": "epicatechin", "value": 211}, {"name": "p-Coumaric acid", "value": 20}, {"name": "trans-Ferulic acid", "value": 2}, {"name": "sinapic acid", "value": 9}, {"name": "benzoic acid", "value": 105}, {"name": "o-Coumaric acid", "value": 1}, {"name": "trans-Cinnamic acid", "value": 1}, {"name": "4-Hydroxybenzoic acid", "value": 10}, {"name": "Catechin hydrate", "value": 2}, {"name": "Caffeic acid", "value": 124}, {"name": "Ferulic acid", "value": 92}, {"name": "Rutin", "value": 181}, {"name": "Kaempferol", "value": 91}, {"name": "Cinnamic acid", "value": 33}, {"name": "Vitamin A", "value": 106}, {"name": "Thiamin", "value": 42}, {"name": "Riboflavin", "value": 137}, {"name": "Niacin", "value": 1203}, {"name": "Vitamin B6", "value": 328}, {"name": "Axit folic", "value": 73}, {"name": "Vitamin B12", "value": 805}, {"name": "Vitamin C", "value": 263}, {"name": "Vitamin E", "value": 76}, {"name": "Vitamin K", "value": 256}]}, {"name": "immune system", "compounds": [{"name": "gallic acid", "value": 16}, {"name": "gentisic acid", "value": 1}, {"name": "catechin", "value": 45}, {"name": "vanillic acid", "value": 3}, {"name": "chlorogenic acid", "value": 8}, {"name": "epicatechin", "value": 10}, {"name": "p-Coumaric acid", "value": 1}, {"name": "sinapic acid", "value": 1}, {"name": "benzoic acid", "value": 10}, {"name": "Caffeic acid", "value": 18}, {"name": "Ferulic acid", "value": 10}, {"name": "Rutin", "value": 26}, {"name": "Kaempferol", "value": 10}, {"name": "Cinnamic acid", "value": 2}, {"name": "Vitamin A", "value": 286}, {"name": "Thiamin", "value": 4}, {"name": "Riboflavin", "value": 30}, {"name": "Niacin", "value": 44}, {"name": "Vitamin B6", "value": 22}, {"name": "Axit folic", "value": 104}, {"name": "Vitamin B12", "value": 33}, {"name": "Vitamin C", "value": 134}, {"name": "Vitamin E", "value": 247}, {"name": "Vitamin K", "value": 30}]}, {"name": "pneumonia", "compounds": [{"name": "gallic acid", "value": 10}, {"name": "protocatechuic acid", "value": 2}, {"name": "catechin", "value": 15}, {"name": "vanillic acid", "value": 1}, {"name": "chlorogenic acid", "value": 7}, {"name": "epicatechin", "value": 3}, {"name": "p-Coumaric acid", "value": 1}, {"name": "sinapic acid", "value": 1}, {"name": "benzoic acid", "value": 11}, {"name": "4-Hydroxybenzoic acid", "value": 1}, {"name": "Caffeic acid", "value": 8}, {"name": "Rutin", "value": 11}, {"name": "Kaempferol", "value": 3}, {"name": "Cinnamic acid", "value": 1}, {"name": "Vitamin A", "value": 26}, {"name": "Thiamin", "value": 2}, {"name": "Riboflavin", "value": 16}, {"name": "Niacin", "value": 14}, {"name": "Vitamin B6", "value": 2}, {"name": "Axit folic", "value": 141}, {"name": "Vitamin B12", "value": 45}, {"name": "Vitamin C", "value": 68}, {"name": "Vitamin E", "value": 88}, {"name": "Vitamin K", "value": 45}]}, {"name": "common cold", "compounds": [{"name": "gallic acid", "value": 4}, {"name": "catechin", "value": 2}, {"name": "vanillic acid", "value": 1}, {"name": "chlorogenic acid", "value": 2}, {"name": "epicatechin", "value": 1}, {"name": "benzoic acid", "value": 2}, {"name": "trans-Cinnamic acid", "value": 1}, {"name": "4-Hydroxybenzoic acid", "value": 1}, {"name": "Caffeic acid", "value": 4}, {"name": "Rutin", "value": 1}, {"name": "Kaempferol", "value": 1}, {"name": "Cinnamic acid", "value": 2}, {"name": "Vitamin A", "value": 3}, {"name": "Riboflavin", "value": 2}, {"name": "Niacin", "value": 2}, {"name": "Axit folic", "value": 12}, {"name": "Vitamin B12", "value": 3}, {"name": "Vitamin C", "value": 206}, {"name": "Vitamin E", "value": 14}, {"name": "Vitamin K", "value": 1}]}, {"name": "vision", "compounds": [{"name": "gallic acid", "value": 7}, {"name": "catechin", "value": 9}, {"name": "chlorogenic acid", "value": 6}, {"name": "epicatechin", "value": 2}, {"name": "benzoic acid", "value": 6}, {"name": "Caffeic acid", "value": 2}, {"name": "Ferulic acid", "value": 3}, {"name": "Rutin", "value": 5}, {"name": "Kaempferol", "value": 4}, {"name": "Cinnamic acid", "value": 1}, {"name": "Vitamin A", "value": 790}, {"name": "Thiamin", "value": 5}, {"name": "Riboflavin", "value": 210}, {"name": "Niacin", "value": 29}, {"name": "Vitamin B6", "value": 15}, {"name": "Axit folic", "value": 79}, {"name": "Vitamin B12", "value": 59}, {"name": "Vitamin C", "value": 78}, {"name": "Vitamin E", "value": 123}, {"name": "Vitamin K", "value": 19}]}, {"name": "liver disease", "compounds": [{"name": "gallic acid", "value": 15}, {"name": "protocatechuic acid", "value": 2}, {"name": "gentisic acid", "value": 2}, {"name": "catechin", "value": 62}, {"name": "chlorogenic acid", "value": 25}, {"name": "syringic acid", "value": 3}, {"name": "epicatechin", "value": 9}, {"name": "p-Coumaric acid", "value": 1}, {"name": "benzoic acid", "value": 14}, {"name": "o-Coumaric acid", "value": 1}, {"name": "Catechin hydrate", "value": 1}, {"name": "Caffeic acid", "value": 14}, {"name": "Ferulic acid", "value": 4}, {"name": "Rutin", "value": 10}, {"name": "Kaempferol", "value": 12}, {"name": "Cinnamic acid", "value": 2}, {"name": "Vitamin A", "value": 248}, {"name": "Thiamin", "value": 5}, {"name": "Riboflavin", "value": 25}, {"name": "Niacin", "value": 55}, {"name": "Vitamin B6", "value": 21}, {"name": "Axit folic", "value": 140}, {"name": "Vitamin B12", "value": 117}, {"name": "Vitamin C", "value": 100}, {"name": "Vitamin E", "value": 543}, {"name": "Vitamin K", "value": 298}]}, {"name": "infections", "compounds": [{"name": "gallic acid", "value": 134}, {"name": "protocatechuic acid", "value": 12}, {"name": "gentisic acid", "value": 8}, {"name": "catechin", "value": 203}, {"name": "vanillic acid", "value": 13}, {"name": "chlorogenic acid", "value": 51}, {"name": "syringic acid", "value": 5}, {"name": "epicatechin", "value": 55}, {"name": "p-Coumaric acid", "value": 12}, {"name": "sinapic acid", "value": 4}, {"name": "benzoic acid", "value": 84}, {"name": "o-Coumaric acid", "value": 1}, {"name": "trans-Cinnamic acid", "value": 4}, {"name": "4-Hydroxybenzoic acid", "value": 5}, {"name": "Catechin hydrate", "value": 3}, {"name": "Caffeic acid", "value": 86}, {"name": "Ferulic acid", "value": 34}, {"name": "Rutin", "value": 62}, {"name": "Kaempferol", "value": 62}, {"name": "Cinnamic acid", "value": 33}, {"name": "Vitamin A", "value": 185}, {"name": "Thiamin", "value": 21}, {"name": "Riboflavin", "value": 289}, {"name": "Niacin", "value": 175}, {"name": "Vitamin B6", "value": 72}, {"name": "Axit folic", "value": 1082}, {"name": "Vitamin B12", "value": 393}, {"name": "Vitamin C", "value": 542}, {"name": "Vitamin E", "value": 598}, {"name": "Vitamin K", "value": 274}]}, {"name": "psoriasis", "compounds": [{"name": "gallic acid", "value": 3}, {"name": "protocatechuic acid", "value": 1}, {"name": "catechin", "value": 6}, {"name": "chlorogenic acid", "value": 4}, {"name": "benzoic acid", "value": 7}, {"name": "Caffeic acid", "value": 4}, {"name": "Ferulic acid", "value": 1}, {"name": "Rutin", "value": 9}, {"name": "Kaempferol", "value": 4}, {"name": "Cinnamic acid", "value": 4}, {"name": "Vitamin A", "value": 306}, {"name": "Thiamin", "value": 1}, {"name": "Riboflavin", "value": 14}, {"name": "Niacin", "value": 21}, {"name": "Vitamin B6", "value": 8}, {"name": "Axit folic", "value": 247}, {"name": "Vitamin B12", "value": 36}, {"name": "Vitamin C", "value": 21}, {"name": "Vitamin E", "value": 40}, {"name": "Vitamin K", "value": 6}]}, {"name": "ageing", "compounds": [{"name": "gallic acid", "value": 19}, {"name": "protocatechuic acid", "value": 5}, {"name": "catechin", "value": 40}, {"name": "vanillic acid", "value": 5}, {"name": "chlorogenic acid", "value": 14}, {"name": "syringic acid", "value": 1}, {"name": "epicatechin", "value": 11}, {"name": "p-Coumaric acid", "value": 4}, {"name": "sinapic acid", "value": 1}, {"name": "benzoic acid", "value": 8}, {"name": "4-Hydroxybenzoic acid", "value": 2}, {"name": "Caffeic acid", "value": 15}, {"name": "Ferulic acid", "value": 8}, {"name": "Rutin", "value": 16}, {"name": "Kaempferol", "value": 13}, {"name": "Cinnamic acid", "value": 4}, {"name": "Vitamin A", "value": 106}, {"name": "Thiamin", "value": 3}, {"name": "Riboflavin", "value": 38}, {"name": "Niacin", "value": 15}, {"name": "Vitamin B6", "value": 28}, {"name": "Axit folic", "value": 143}, {"name": "Vitamin B12", "value": 98}, {"name": "Vitamin C", "value": 127}, {"name": "Vitamin E", "value": 239}, {"name": "Vitamin K", "value": 66}]}]}
+{
+  "Name": "Bitter Gourd",
+  "disease": [
+    {
+      "name": "diabetes",
+      "compounds": [
+        {
+          "name": "gallic acid",
+          "value": 271
+        },
+        {
+          "name": "protocatechuic acid",
+          "value": 43
+        },
+        {
+          "name": "gentisic acid",
+          "value": 4
+        },
+        {
+          "name": "catechin",
+          "value": 477
+        },
+        {
+          "name": "vanillic acid",
+          "value": 22
+        },
+        {
+          "name": "chlorogenic acid",
+          "value": 248
+        },
+        {
+          "name": "syringic acid",
+          "value": 12
+        },
+        {
+          "name": "epicatechin",
+          "value": 142
+        },
+        {
+          "name": "p-Coumaric acid",
+          "value": 29
+        },
+        {
+          "name": "trans-Ferulic acid",
+          "value": 2
+        },
+        {
+          "name": "sinapic acid",
+          "value": 6
+        },
+        {
+          "name": "benzoic acid",
+          "value": 145
+        },
+        {
+          "name": "o-Coumaric acid",
+          "value": 2
+        },
+        {
+          "name": "trans-Cinnamic acid",
+          "value": 3
+        },
+        {
+          "name": "4-Hydroxybenzoic acid",
+          "value": 10
+        },
+        {
+          "name": "Catechin hydrate",
+          "value": 1
+        },
+        {
+          "name": "Caffeic acid",
+          "value": 159
+        },
+        {
+          "name": "Ferulic acid",
+          "value": 124
+        },
+        {
+          "name": "Rutin",
+          "value": 246
+        },
+        {
+          "name": "Kaempferol",
+          "value": 173
+        },
+        {
+          "name": "Cinnamic acid",
+          "value": 50
+        },
+        {
+          "name": "Vitamin A",
+          "value": 617
+        },
+        {
+          "name": "Thiamin",
+          "value": 60
+        },
+        {
+          "name": "Riboflavin",
+          "value": 157
+        },
+        {
+          "name": "Niacin",
+          "value": 296
+        },
+        {
+          "name": "Vitamin B6",
+          "value": 160
+        },
+        {
+          "name": "Axit folic",
+          "value": 121
+        },
+        {
+          "name": "Vitamin B12",
+          "value": 104
+        },
+        {
+          "name": "Vitamin C",
+          "value": 1102
+        },
+        {
+          "name": "Vitamin E",
+          "value": 122
+        },
+        {
+          "name": "Vitamin K",
+          "value": 64
+        }
+      ]
+    },
+    {
+      "name": "digestion",
+      "compounds": [
+        {
+          "name": "gallic acid",
+          "value": 83
+        },
+        {
+          "name": "protocatechuic acid",
+          "value": 15
+        },
+        {
+          "name": "gentisic acid",
+          "value": 2
+        },
+        {
+          "name": "catechin",
+          "value": 151
+        },
+        {
+          "name": "vanillic acid",
+          "value": 19
+        },
+        {
+          "name": "chlorogenic acid",
+          "value": 76
+        },
+        {
+          "name": "syringic acid",
+          "value": 9
+        },
+        {
+          "name": "epicatechin",
+          "value": 38
+        },
+        {
+          "name": "p-Coumaric acid",
+          "value": 50
+        },
+        {
+          "name": "trans-Ferulic acid",
+          "value": 2
+        },
+        {
+          "name": "sinapic acid",
+          "value": 7
+        },
+        {
+          "name": "benzoic acid",
+          "value": 41
+        },
+        {
+          "name": "trans-Cinnamic acid",
+          "value": 7
+        },
+        {
+          "name": "4-Hydroxybenzoic acid",
+          "value": 5
+        },
+        {
+          "name": "Caffeic acid",
+          "value": 58
+        },
+        {
+          "name": "Ferulic acid",
+          "value": 91
+        },
+        {
+          "name": "Rutin",
+          "value": 55
+        },
+        {
+          "name": "Kaempferol",
+          "value": 27
+        },
+        {
+          "name": "Cinnamic acid",
+          "value": 29
+        },
+        {
+          "name": "Vitamin A",
+          "value": 182
+        },
+        {
+          "name": "Thiamin",
+          "value": 27
+        },
+        {
+          "name": "Riboflavin",
+          "value": 94
+        },
+        {
+          "name": "Niacin",
+          "value": 55
+        },
+        {
+          "name": "Vitamin B6",
+          "value": 21
+        },
+        {
+          "name": "Axit folic",
+          "value": 154
+        },
+        {
+          "name": "Vitamin B12",
+          "value": 109
+        },
+        {
+          "name": "Vitamin C",
+          "value": 79
+        },
+        {
+          "name": "Vitamin E",
+          "value": 129
+        },
+        {
+          "name": "Vitamin K",
+          "value": 62
+        }
+      ]
+    },
+    {
+      "name": "metabolism",
+      "compounds": [
+        {
+          "name": "gallic acid",
+          "value": 2977
+        },
+        {
+          "name": "protocatechuic acid",
+          "value": 762
+        },
+        {
+          "name": "gentisic acid",
+          "value": 178
+        },
+        {
+          "name": "catechin",
+          "value": 6245
+        },
+        {
+          "name": "vanillic acid",
+          "value": 718
+        },
+        {
+          "name": "chlorogenic acid",
+          "value": 1702
+        },
+        {
+          "name": "syringic acid",
+          "value": 243
+        },
+        {
+          "name": "epicatechin",
+          "value": 1637
+        },
+        {
+          "name": "p-Coumaric acid",
+          "value": 774
+        },
+        {
+          "name": "trans-Ferulic acid",
+          "value": 29
+        },
+        {
+          "name": "sinapic acid",
+          "value": 191
+        },
+        {
+          "name": "benzoic acid",
+          "value": 3750
+        },
+        {
+          "name": "o-Coumaric acid",
+          "value": 42
+        },
+        {
+          "name": "trans-Cinnamic acid",
+          "value": 162
+        },
+        {
+          "name": "4-Hydroxybenzoic acid",
+          "value": 604
+        },
+        {
+          "name": "Catechin hydrate",
+          "value": 24
+        },
+        {
+          "name": "Caffeic acid",
+          "value": 2613
+        },
+        {
+          "name": "Ferulic acid",
+          "value": 2138
+        },
+        {
+          "name": "Rutin",
+          "value": 2031
+        },
+        {
+          "name": "Kaempferol",
+          "value": 1783
+        },
+        {
+          "name": "Cinnamic acid",
+          "value": 1037
+        },
+        {
+          "name": "Vitamin A",
+          "value": 10000
+        },
+        {
+          "name": "Thiamin",
+          "value": 1417
+        },
+        {
+          "name": "Riboflavin",
+          "value": 5807
+        },
+        {
+          "name": "Niacin",
+          "value": 3403
+        },
+        {
+          "name": "Vitamin B6",
+          "value": 2410
+        },
+        {
+          "name": "Axit folic",
+          "value": 10000
+        },
+        {
+          "name": "Vitamin B12",
+          "value": 5916
+        },
+        {
+          "name": "Vitamin C",
+          "value": 8608
+        },
+        {
+          "name": "Vitamin E",
+          "value": 10000
+        },
+        {
+          "name": "Vitamin K",
+          "value": 7269
+        }
+      ]
+    },
+    {
+      "name": "cancer",
+      "compounds": [
+        {
+          "name": "gallic acid",
+          "value": 709
+        },
+        {
+          "name": "protocatechuic acid",
+          "value": 98
+        },
+        {
+          "name": "gentisic acid",
+          "value": 18
+        },
+        {
+          "name": "catechin",
+          "value": 2067
+        },
+        {
+          "name": "vanillic acid",
+          "value": 62
+        },
+        {
+          "name": "chlorogenic acid",
+          "value": 244
+        },
+        {
+          "name": "syringic acid",
+          "value": 52
+        },
+        {
+          "name": "epicatechin",
+          "value": 378
+        },
+        {
+          "name": "p-Coumaric acid",
+          "value": 103
+        },
+        {
+          "name": "trans-Ferulic acid",
+          "value": 4
+        },
+        {
+          "name": "sinapic acid",
+          "value": 20
+        },
+        {
+          "name": "benzoic acid",
+          "value": 422
+        },
+        {
+          "name": "o-Coumaric acid",
+          "value": 4
+        },
+        {
+          "name": "trans-Cinnamic acid",
+          "value": 9
+        },
+        {
+          "name": "4-Hydroxybenzoic acid",
+          "value": 36
+        },
+        {
+          "name": "Catechin hydrate",
+          "value": 6
+        },
+        {
+          "name": "Caffeic acid",
+          "value": 571
+        },
+        {
+          "name": "Ferulic acid",
+          "value": 273
+        },
+        {
+          "name": "Rutin",
+          "value": 364
+        },
+        {
+          "name": "Kaempferol",
+          "value": 506
+        },
+        {
+          "name": "Cinnamic acid",
+          "value": 156
+        },
+        {
+          "name": "Vitamin A",
+          "value": 356
+        },
+        {
+          "name": "Thiamin",
+          "value": 80
+        },
+        {
+          "name": "Riboflavin",
+          "value": 535
+        },
+        {
+          "name": "Niacin",
+          "value": 296
+        },
+        {
+          "name": "Vitamin B6",
+          "value": 349
+        },
+        {
+          "name": "Axit folic",
+          "value": 427
+        },
+        {
+          "name": "Vitamin B12",
+          "value": 83
+        },
+        {
+          "name": "Vitamin C",
+          "value": 573
+        },
+        {
+          "name": "Vitamin E",
+          "value": 802
+        },
+        {
+          "name": "Vitamin K",
+          "value": 110
+        }
+      ]
+    },
+    {
+      "name": "cholesterol",
+      "compounds": [
+        {
+          "name": "gallic acid",
+          "value": 127
+        },
+        {
+          "name": "protocatechuic acid",
+          "value": 19
+        },
+        {
+          "name": "gentisic acid",
+          "value": 1
+        },
+        {
+          "name": "catechin",
+          "value": 359
+        },
+        {
+          "name": "vanillic acid",
+          "value": 21
+        },
+        {
+          "name": "chlorogenic acid",
+          "value": 101
+        },
+        {
+          "name": "syringic acid",
+          "value": 6
+        },
+        {
+          "name": "epicatechin",
+          "value": 95
+        },
+        {
+          "name": "p-Coumaric acid",
+          "value": 19
+        },
+        {
+          "name": "trans-Ferulic acid",
+          "value": 1
+        },
+        {
+          "name": "sinapic acid",
+          "value": 12
+        },
+        {
+          "name": "benzoic acid",
+          "value": 71
+        },
+        {
+          "name": "o-Coumaric acid",
+          "value": 5
+        },
+        {
+          "name": "trans-Cinnamic acid",
+          "value": 2
+        },
+        {
+          "name": "4-Hydroxybenzoic acid",
+          "value": 7
+        },
+        {
+          "name": "Catechin hydrate",
+          "value": 1
+        },
+        {
+          "name": "Caffeic acid",
+          "value": 66
+        },
+        {
+          "name": "Ferulic acid",
+          "value": 98
+        },
+        {
+          "name": "Rutin",
+          "value": 130
+        },
+        {
+          "name": "Kaempferol",
+          "value": 55
+        },
+        {
+          "name": "Cinnamic acid",
+          "value": 15
+        },
+        {
+          "name": "Vitamin A",
+          "value": 1528
+        },
+        {
+          "name": "Thiamin",
+          "value": 97
+        },
+        {
+          "name": "Riboflavin",
+          "value": 231
+        },
+        {
+          "name": "Niacin",
+          "value": 1842
+        },
+        {
+          "name": "Vitamin B6",
+          "value": 177
+        },
+        {
+          "name": "Axit folic",
+          "value": 879
+        },
+        {
+          "name": "Vitamin B12",
+          "value": 475
+        },
+        {
+          "name": "Vitamin C",
+          "value": 1281
+        },
+        {
+          "name": "Vitamin E",
+          "value": 477
+        },
+        {
+          "name": "Vitamin K",
+          "value": 41
+        }
+      ]
+    },
+    {
+      "name": "cardiovascular",
+      "compounds": [
+        {
+          "name": "gallic acid",
+          "value": 190
+        },
+        {
+          "name": "protocatechuic acid",
+          "value": 35
+        },
+        {
+          "name": "gentisic acid",
+          "value": 4
+        },
+        {
+          "name": "catechin",
+          "value": 587
+        },
+        {
+          "name": "vanillic acid",
+          "value": 27
+        },
+        {
+          "name": "chlorogenic acid",
+          "value": 129
+        },
+        {
+          "name": "syringic acid",
+          "value": 8
+        },
+        {
+          "name": "epicatechin",
+          "value": 211
+        },
+        {
+          "name": "p-Coumaric acid",
+          "value": 20
+        },
+        {
+          "name": "trans-Ferulic acid",
+          "value": 2
+        },
+        {
+          "name": "sinapic acid",
+          "value": 9
+        },
+        {
+          "name": "benzoic acid",
+          "value": 105
+        },
+        {
+          "name": "o-Coumaric acid",
+          "value": 1
+        },
+        {
+          "name": "trans-Cinnamic acid",
+          "value": 1
+        },
+        {
+          "name": "4-Hydroxybenzoic acid",
+          "value": 10
+        },
+        {
+          "name": "Catechin hydrate",
+          "value": 2
+        },
+        {
+          "name": "Caffeic acid",
+          "value": 124
+        },
+        {
+          "name": "Ferulic acid",
+          "value": 92
+        },
+        {
+          "name": "Rutin",
+          "value": 181
+        },
+        {
+          "name": "Kaempferol",
+          "value": 91
+        },
+        {
+          "name": "Cinnamic acid",
+          "value": 33
+        },
+        {
+          "name": "Vitamin A",
+          "value": 106
+        },
+        {
+          "name": "Thiamin",
+          "value": 42
+        },
+        {
+          "name": "Riboflavin",
+          "value": 137
+        },
+        {
+          "name": "Niacin",
+          "value": 1203
+        },
+        {
+          "name": "Vitamin B6",
+          "value": 328
+        },
+        {
+          "name": "Axit folic",
+          "value": 73
+        },
+        {
+          "name": "Vitamin B12",
+          "value": 805
+        },
+        {
+          "name": "Vitamin C",
+          "value": 263
+        },
+        {
+          "name": "Vitamin E",
+          "value": 76
+        },
+        {
+          "name": "Vitamin K",
+          "value": 256
+        }
+      ]
+    },
+    {
+      "name": "immune system",
+      "compounds": [
+        {
+          "name": "gallic acid",
+          "value": 16
+        },
+        {
+          "name": "gentisic acid",
+          "value": 1
+        },
+        {
+          "name": "catechin",
+          "value": 45
+        },
+        {
+          "name": "vanillic acid",
+          "value": 3
+        },
+        {
+          "name": "chlorogenic acid",
+          "value": 8
+        },
+        {
+          "name": "epicatechin",
+          "value": 10
+        },
+        {
+          "name": "p-Coumaric acid",
+          "value": 1
+        },
+        {
+          "name": "sinapic acid",
+          "value": 1
+        },
+        {
+          "name": "benzoic acid",
+          "value": 10
+        },
+        {
+          "name": "Caffeic acid",
+          "value": 18
+        },
+        {
+          "name": "Ferulic acid",
+          "value": 10
+        },
+        {
+          "name": "Rutin",
+          "value": 26
+        },
+        {
+          "name": "Kaempferol",
+          "value": 10
+        },
+        {
+          "name": "Cinnamic acid",
+          "value": 2
+        },
+        {
+          "name": "Vitamin A",
+          "value": 286
+        },
+        {
+          "name": "Thiamin",
+          "value": 4
+        },
+        {
+          "name": "Riboflavin",
+          "value": 30
+        },
+        {
+          "name": "Niacin",
+          "value": 44
+        },
+        {
+          "name": "Vitamin B6",
+          "value": 22
+        },
+        {
+          "name": "Axit folic",
+          "value": 104
+        },
+        {
+          "name": "Vitamin B12",
+          "value": 33
+        },
+        {
+          "name": "Vitamin C",
+          "value": 134
+        },
+        {
+          "name": "Vitamin E",
+          "value": 247
+        },
+        {
+          "name": "Vitamin K",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "name": "pneumonia",
+      "compounds": [
+        {
+          "name": "gallic acid",
+          "value": 10
+        },
+        {
+          "name": "protocatechuic acid",
+          "value": 2
+        },
+        {
+          "name": "catechin",
+          "value": 15
+        },
+        {
+          "name": "vanillic acid",
+          "value": 1
+        },
+        {
+          "name": "chlorogenic acid",
+          "value": 7
+        },
+        {
+          "name": "epicatechin",
+          "value": 3
+        },
+        {
+          "name": "p-Coumaric acid",
+          "value": 1
+        },
+        {
+          "name": "sinapic acid",
+          "value": 1
+        },
+        {
+          "name": "benzoic acid",
+          "value": 11
+        },
+        {
+          "name": "4-Hydroxybenzoic acid",
+          "value": 1
+        },
+        {
+          "name": "Caffeic acid",
+          "value": 8
+        },
+        {
+          "name": "Rutin",
+          "value": 11
+        },
+        {
+          "name": "Kaempferol",
+          "value": 3
+        },
+        {
+          "name": "Cinnamic acid",
+          "value": 1
+        },
+        {
+          "name": "Vitamin A",
+          "value": 26
+        },
+        {
+          "name": "Thiamin",
+          "value": 2
+        },
+        {
+          "name": "Riboflavin",
+          "value": 16
+        },
+        {
+          "name": "Niacin",
+          "value": 14
+        },
+        {
+          "name": "Vitamin B6",
+          "value": 2
+        },
+        {
+          "name": "Axit folic",
+          "value": 141
+        },
+        {
+          "name": "Vitamin B12",
+          "value": 45
+        },
+        {
+          "name": "Vitamin C",
+          "value": 68
+        },
+        {
+          "name": "Vitamin E",
+          "value": 88
+        },
+        {
+          "name": "Vitamin K",
+          "value": 45
+        }
+      ]
+    },
+    {
+      "name": "common cold",
+      "compounds": [
+        {
+          "name": "gallic acid",
+          "value": 4
+        },
+        {
+          "name": "catechin",
+          "value": 2
+        },
+        {
+          "name": "vanillic acid",
+          "value": 1
+        },
+        {
+          "name": "chlorogenic acid",
+          "value": 2
+        },
+        {
+          "name": "epicatechin",
+          "value": 1
+        },
+        {
+          "name": "benzoic acid",
+          "value": 2
+        },
+        {
+          "name": "trans-Cinnamic acid",
+          "value": 1
+        },
+        {
+          "name": "4-Hydroxybenzoic acid",
+          "value": 1
+        },
+        {
+          "name": "Caffeic acid",
+          "value": 4
+        },
+        {
+          "name": "Rutin",
+          "value": 1
+        },
+        {
+          "name": "Kaempferol",
+          "value": 1
+        },
+        {
+          "name": "Cinnamic acid",
+          "value": 2
+        },
+        {
+          "name": "Vitamin A",
+          "value": 3
+        },
+        {
+          "name": "Riboflavin",
+          "value": 2
+        },
+        {
+          "name": "Niacin",
+          "value": 2
+        },
+        {
+          "name": "Axit folic",
+          "value": 12
+        },
+        {
+          "name": "Vitamin B12",
+          "value": 3
+        },
+        {
+          "name": "Vitamin C",
+          "value": 206
+        },
+        {
+          "name": "Vitamin E",
+          "value": 14
+        },
+        {
+          "name": "Vitamin K",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "name": "vision",
+      "compounds": [
+        {
+          "name": "gallic acid",
+          "value": 7
+        },
+        {
+          "name": "catechin",
+          "value": 9
+        },
+        {
+          "name": "chlorogenic acid",
+          "value": 6
+        },
+        {
+          "name": "epicatechin",
+          "value": 2
+        },
+        {
+          "name": "benzoic acid",
+          "value": 6
+        },
+        {
+          "name": "Caffeic acid",
+          "value": 2
+        },
+        {
+          "name": "Ferulic acid",
+          "value": 3
+        },
+        {
+          "name": "Rutin",
+          "value": 5
+        },
+        {
+          "name": "Kaempferol",
+          "value": 4
+        },
+        {
+          "name": "Cinnamic acid",
+          "value": 1
+        },
+        {
+          "name": "Vitamin A",
+          "value": 790
+        },
+        {
+          "name": "Thiamin",
+          "value": 5
+        },
+        {
+          "name": "Riboflavin",
+          "value": 210
+        },
+        {
+          "name": "Niacin",
+          "value": 29
+        },
+        {
+          "name": "Vitamin B6",
+          "value": 15
+        },
+        {
+          "name": "Axit folic",
+          "value": 79
+        },
+        {
+          "name": "Vitamin B12",
+          "value": 59
+        },
+        {
+          "name": "Vitamin C",
+          "value": 78
+        },
+        {
+          "name": "Vitamin E",
+          "value": 123
+        },
+        {
+          "name": "Vitamin K",
+          "value": 19
+        }
+      ]
+    },
+    {
+      "name": "liver disease",
+      "compounds": [
+        {
+          "name": "gallic acid",
+          "value": 15
+        },
+        {
+          "name": "protocatechuic acid",
+          "value": 2
+        },
+        {
+          "name": "gentisic acid",
+          "value": 2
+        },
+        {
+          "name": "catechin",
+          "value": 62
+        },
+        {
+          "name": "chlorogenic acid",
+          "value": 25
+        },
+        {
+          "name": "syringic acid",
+          "value": 3
+        },
+        {
+          "name": "epicatechin",
+          "value": 9
+        },
+        {
+          "name": "p-Coumaric acid",
+          "value": 1
+        },
+        {
+          "name": "benzoic acid",
+          "value": 14
+        },
+        {
+          "name": "o-Coumaric acid",
+          "value": 1
+        },
+        {
+          "name": "Catechin hydrate",
+          "value": 1
+        },
+        {
+          "name": "Caffeic acid",
+          "value": 14
+        },
+        {
+          "name": "Ferulic acid",
+          "value": 4
+        },
+        {
+          "name": "Rutin",
+          "value": 10
+        },
+        {
+          "name": "Kaempferol",
+          "value": 12
+        },
+        {
+          "name": "Cinnamic acid",
+          "value": 2
+        },
+        {
+          "name": "Vitamin A",
+          "value": 248
+        },
+        {
+          "name": "Thiamin",
+          "value": 5
+        },
+        {
+          "name": "Riboflavin",
+          "value": 25
+        },
+        {
+          "name": "Niacin",
+          "value": 55
+        },
+        {
+          "name": "Vitamin B6",
+          "value": 21
+        },
+        {
+          "name": "Axit folic",
+          "value": 140
+        },
+        {
+          "name": "Vitamin B12",
+          "value": 117
+        },
+        {
+          "name": "Vitamin C",
+          "value": 100
+        },
+        {
+          "name": "Vitamin E",
+          "value": 543
+        },
+        {
+          "name": "Vitamin K",
+          "value": 298
+        }
+      ]
+    },
+    {
+      "name": "infections",
+      "compounds": [
+        {
+          "name": "gallic acid",
+          "value": 134
+        },
+        {
+          "name": "protocatechuic acid",
+          "value": 12
+        },
+        {
+          "name": "gentisic acid",
+          "value": 8
+        },
+        {
+          "name": "catechin",
+          "value": 203
+        },
+        {
+          "name": "vanillic acid",
+          "value": 13
+        },
+        {
+          "name": "chlorogenic acid",
+          "value": 51
+        },
+        {
+          "name": "syringic acid",
+          "value": 5
+        },
+        {
+          "name": "epicatechin",
+          "value": 55
+        },
+        {
+          "name": "p-Coumaric acid",
+          "value": 12
+        },
+        {
+          "name": "sinapic acid",
+          "value": 4
+        },
+        {
+          "name": "benzoic acid",
+          "value": 84
+        },
+        {
+          "name": "o-Coumaric acid",
+          "value": 1
+        },
+        {
+          "name": "trans-Cinnamic acid",
+          "value": 4
+        },
+        {
+          "name": "4-Hydroxybenzoic acid",
+          "value": 5
+        },
+        {
+          "name": "Catechin hydrate",
+          "value": 3
+        },
+        {
+          "name": "Caffeic acid",
+          "value": 86
+        },
+        {
+          "name": "Ferulic acid",
+          "value": 34
+        },
+        {
+          "name": "Rutin",
+          "value": 62
+        },
+        {
+          "name": "Kaempferol",
+          "value": 62
+        },
+        {
+          "name": "Cinnamic acid",
+          "value": 33
+        },
+        {
+          "name": "Vitamin A",
+          "value": 185
+        },
+        {
+          "name": "Thiamin",
+          "value": 21
+        },
+        {
+          "name": "Riboflavin",
+          "value": 289
+        },
+        {
+          "name": "Niacin",
+          "value": 175
+        },
+        {
+          "name": "Vitamin B6",
+          "value": 72
+        },
+        {
+          "name": "Axit folic",
+          "value": 1082
+        },
+        {
+          "name": "Vitamin B12",
+          "value": 393
+        },
+        {
+          "name": "Vitamin C",
+          "value": 542
+        },
+        {
+          "name": "Vitamin E",
+          "value": 598
+        },
+        {
+          "name": "Vitamin K",
+          "value": 274
+        }
+      ]
+    },
+    {
+      "name": "psoriasis",
+      "compounds": [
+        {
+          "name": "gallic acid",
+          "value": 3
+        },
+        {
+          "name": "protocatechuic acid",
+          "value": 1
+        },
+        {
+          "name": "catechin",
+          "value": 6
+        },
+        {
+          "name": "chlorogenic acid",
+          "value": 4
+        },
+        {
+          "name": "benzoic acid",
+          "value": 7
+        },
+        {
+          "name": "Caffeic acid",
+          "value": 4
+        },
+        {
+          "name": "Ferulic acid",
+          "value": 1
+        },
+        {
+          "name": "Rutin",
+          "value": 9
+        },
+        {
+          "name": "Kaempferol",
+          "value": 4
+        },
+        {
+          "name": "Cinnamic acid",
+          "value": 4
+        },
+        {
+          "name": "Vitamin A",
+          "value": 306
+        },
+        {
+          "name": "Thiamin",
+          "value": 1
+        },
+        {
+          "name": "Riboflavin",
+          "value": 14
+        },
+        {
+          "name": "Niacin",
+          "value": 21
+        },
+        {
+          "name": "Vitamin B6",
+          "value": 8
+        },
+        {
+          "name": "Axit folic",
+          "value": 247
+        },
+        {
+          "name": "Vitamin B12",
+          "value": 36
+        },
+        {
+          "name": "Vitamin C",
+          "value": 21
+        },
+        {
+          "name": "Vitamin E",
+          "value": 40
+        },
+        {
+          "name": "Vitamin K",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "name": "ageing",
+      "compounds": [
+        {
+          "name": "gallic acid",
+          "value": 19
+        },
+        {
+          "name": "protocatechuic acid",
+          "value": 5
+        },
+        {
+          "name": "catechin",
+          "value": 40
+        },
+        {
+          "name": "vanillic acid",
+          "value": 5
+        },
+        {
+          "name": "chlorogenic acid",
+          "value": 14
+        },
+        {
+          "name": "syringic acid",
+          "value": 1
+        },
+        {
+          "name": "epicatechin",
+          "value": 11
+        },
+        {
+          "name": "p-Coumaric acid",
+          "value": 4
+        },
+        {
+          "name": "sinapic acid",
+          "value": 1
+        },
+        {
+          "name": "benzoic acid",
+          "value": 8
+        },
+        {
+          "name": "4-Hydroxybenzoic acid",
+          "value": 2
+        },
+        {
+          "name": "Caffeic acid",
+          "value": 15
+        },
+        {
+          "name": "Ferulic acid",
+          "value": 8
+        },
+        {
+          "name": "Rutin",
+          "value": 16
+        },
+        {
+          "name": "Kaempferol",
+          "value": 13
+        },
+        {
+          "name": "Cinnamic acid",
+          "value": 4
+        },
+        {
+          "name": "Vitamin A",
+          "value": 106
+        },
+        {
+          "name": "Thiamin",
+          "value": 3
+        },
+        {
+          "name": "Riboflavin",
+          "value": 38
+        },
+        {
+          "name": "Niacin",
+          "value": 15
+        },
+        {
+          "name": "Vitamin B6",
+          "value": 28
+        },
+        {
+          "name": "Axit folic",
+          "value": 143
+        },
+        {
+          "name": "Vitamin B12",
+          "value": 98
+        },
+        {
+          "name": "Vitamin C",
+          "value": 127
+        },
+        {
+          "name": "Vitamin E",
+          "value": 239
+        },
+        {
+          "name": "Vitamin K",
+          "value": 66
+        }
+      ]
+    }
+  ]
+}

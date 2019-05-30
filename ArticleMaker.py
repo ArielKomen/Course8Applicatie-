@@ -49,7 +49,7 @@ def article_maker():
     return article_list, disease_dictionary, compound_dictionary
 
 def JSON_maker(article_list, disease_dictionary, compound_dictionary):
-    JSON_dict = {"Name":"Bitter Gourd", "disease":[]}
+    JSON_dict = {"name":"Bitter Gourd", "children":[]}
     article_disease_compound_dictionary = {}
     article_disease_dictionary = {}
     counter = 0
@@ -77,9 +77,9 @@ def JSON_maker(article_list, disease_dictionary, compound_dictionary):
                         compound_count_dict[compound] = 1
                     else:
                         compound_count_dict[compound] += 1
-        JSON_dict["disease"].append({"name": key, "compounds":[]})
+        JSON_dict["children"].append({"name": key, "children":[]})
         for compound in compound_count_dict:
-            JSON_dict["disease"][counter]['compounds'].append({"name":compound,"value":compound_count_dict[compound]})
+            JSON_dict["children"][counter]['children'].append({"name":compound,"value":compound_count_dict[compound]})
         counter += 1;
     with open("/home/stephan/PycharmProjects/Course8Applicatie-/data/data.json", "w") as outfile:
         json.dump(JSON_dict, outfile)

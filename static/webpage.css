@@ -1,9 +1,7 @@
 body {font-family: "Lato", sans-serif;}
 body{
-	background-color: #cccccc;
+	background-color: #daf1ee;
 }
-
-/* dit is de css voor de hoofdtabjes-------------------------------------- */
 .tablink {
   background-color: #555;
   color: white;
@@ -16,22 +14,20 @@ body{
   width: 25%;
 }
 
-.tablink:hover {
-  background-color: #777;
+.li {
+  color: #41B3A3;
 }
 
-/* Style the tab content */
-.tabcontent {
+.li span{
   color: white;
-  display: none;
-  padding: 20px;
-  text-align: center;
 }
 
-#Home {background-color:#41B3A3;}
-#Help {background-color:#4151B3;}
-#Disclaimer {background-color:#A341B3;}
-#About {background-color:#B34151;}
+.tablink:hover {
+  background-color: #41B3A3;
+}
 
-
+.upperbar {
+  background-color: #41B3A3;
+  padding: 10px 16px;
+}
 

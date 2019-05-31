@@ -100,8 +100,8 @@ def JSON_maker(article_list, disease_dictionary, compound_dictionary):
         for disease in disease_count_dict:
             Bittergourd_compound_disease_JSON["children"][counter]['children'].append({"name":disease,"size":disease_count_dict[disease]})
         counter+=1
-    with open("/home/stephan/PycharmProjects/Course8Applicatie-/data/Bittergourd_compound_disease.json", "w") as outfile:
-        json.dump(Bittergourd_compound_disease_JSON, outfile)
+    with open("/home/stephan/PycharmProjects/Course8Applicatie-/data/Bittergourd_compound_disease.json", "w") as outfile2:
+        json.dump(Bittergourd_compound_disease_JSON, outfile2)
         outfile.close()
 
 def db_filler(article_list, disease_dictionary):

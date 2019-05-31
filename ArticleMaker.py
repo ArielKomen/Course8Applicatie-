@@ -28,17 +28,14 @@ def article_maker():
             article_list.append(Article(splitline[4], splitline[1], splitline[0], disease, compound))
             if compound not in unique_compound:
                 unique_compound.append(compound)
-    for compound in unique_compound:
-        compound_dictionary[compound] = counter
-        counter += 1
     with open("/home/stephan/PycharmProjects/Course8Applicatie-/data/export bitter gourd en ziektes") as bittergourd_disease:
         counter = 0
         for line in bittergourd_disease:
             strippedline = line.rstrip("\n")
             splitline = strippedline.split(";")
             if splitline[0] not in PMID_set:
-                disease = splitline[3].split("AND")
-                disease = disease[0].strip(" ")
+                search_query = splitline[3].split("AND")
+                disease = search_query[0].strip(" ")
                 disease = disease.strip('\"')
                 article_list.append(Article(splitline[4], splitline[1], splitline[0], disease, "Na"))
                 if disease not in unique_disease:
@@ -46,30 +43,27 @@ def article_maker():
     for disease in unique_disease:
         disease_dictionary[disease] = counter
         counter+=1
+    for compound in unique_compound:
+        compound_dictionary[compound] = counter
+        counter += 1
     return article_list, disease_dictionary, compound_dictionary
 
 def JSON_maker(article_list, disease_dictionary, compound_dictionary):
-    JSON_dict = {"name":"Bitter Gourd", "children":[]}
-    article_disease_compound_dictionary = {}
+    Bittergourd_disease_compound_JSON = {"name":"Bitter Gourd", "children":[]}
+    Bittergourd_compound_disease_JSON = {"name":"Bitter Gourd", "children":[]}
     article_disease_dictionary = {}
+    article_compound_dictionary = {}
     counter = 0
-    for key in disease_dictionary:
+    for disease in disease_dictionary:
         for article in article_list:
-            if key == article.get_ziekte() and article.get_compound() != "Na":
-                if key in article_disease_dictionary:
-                    article_disease_dictionary[key].append(list(article.get_all_attributes()))
+            if disease == article.get_ziekte():
+                if disease in article_disease_dictionary:
+                    article_disease_dictionary[disease].append(list(article.get_all_attributes()))
                 else:
-                    article_disease_dictionary[key] = []
-                    article_disease_dictionary[key].append(list(article.get_all_attributes()))
-
-            elif key == article.get_ziekte():
-                if key in article_disease_compound_dictionary:
-                    article_disease_compound_dictionary[key].append(list(article.get_all_attributes()))
-                else:
-                    article_disease_compound_dictionary[key] = []
-                    article_disease_compound_dictionary[key].append(list(article.get_all_attributes()))
+                    article_disease_dictionary[disease] = []
+                    article_disease_dictionary[disease].append(list(article.get_all_attributes()))
         compound_count_dict = {}
-        value = article_disease_dictionary[key]
+        value = article_disease_dictionary[disease]
         for attributes in value:
             for compound in compound_dictionary:
                 if compound in attributes:
@@ -77,14 +71,38 @@ def JSON_maker(article_list, disease_dictionary, compound_dictionary):
                         compound_count_dict[compound] = 1
                     else:
                         compound_count_dict[compound] += 1
-        JSON_dict["children"].append({"name": key, "children":[]})
+        Bittergourd_disease_compound_JSON["children"].append({"name": disease, "children":[]})
         for compound in compound_count_dict:
-            JSON_dict["children"][counter]['children'].append({"name":compound,"size":compound_count_dict[compound]})
+            Bittergourd_disease_compound_JSON["children"][counter]['children'].append({"name":compound,"size":compound_count_dict[compound]})
         counter += 1;
-    with open("/home/stephan/PycharmProjects/Course8Applicatie-/data/data.json", "w") as outfile:
-        json.dump(JSON_dict, outfile)
+    with open("/home/stephan/PycharmProjects/Course8Applicatie-/data/Bittergourd_disease_compound.json", "w") as outfile:
+        json.dump(Bittergourd_disease_compound_JSON, outfile)
         outfile.close()
-
+    counter = 0
+    for compound in compound_dictionary:
+        for article in article_list:
+            if compound == article.get_compound():
+                if compound in article_compound_dictionary:
+                    article_compound_dictionary[compound].append(list(article.get_all_attributes()))
+                else:
+                    article_compound_dictionary[compound] = []
+                    article_compound_dictionary[compound].append(list(article.get_all_attributes()))
+        disease_count_dict = {}
+        value = article_compound_dictionary[compound]
+        for attributes in value:
+            for disease in disease_dictionary:
+                if disease in attributes:
+                    if disease not in disease_count_dict:
+                        disease_count_dict[disease] = 1
+                    else:
+                        disease_count_dict[disease] += 1
+        Bittergourd_compound_disease_JSON["children"].append({"name": compound, "children":[]})
+        for disease in disease_count_dict:
+            Bittergourd_compound_disease_JSON["children"][counter]['children'].append({"name":disease,"size":disease_count_dict[disease]})
+        counter+=1
+    with open("/home/stephan/PycharmProjects/Course8Applicatie-/data/Bittergourd_compound_disease.json", "w") as outfile:
+        json.dump(Bittergourd_compound_disease_JSON, outfile)
+        outfile.close()
 
 def db_filler(article_list, disease_dictionary):
 

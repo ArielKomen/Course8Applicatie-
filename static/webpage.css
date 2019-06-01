@@ -1,6 +1,6 @@
-body {font-family: "Lato", sans-serif;}
-body{
-	background-color: #daf1ee;
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #daf1ee;
 }
 .tablink {
   background-color: #555;
@@ -29,5 +29,32 @@ body{
 .upperbar {
   background-color: #41B3A3;
   padding: 10px 16px;
+}
+.my-custom-scrollbar {
+        position: relative;
+        height: 500px;
+        overflow: auto;
+}
+.table-wrapper-scroll-y {
+        display: block;
+}
+
+.slice {
+    cursor: pointer;
+}
+
+.slice .main-arc {
+    stroke: #fff;
+    stroke-width: 1px;
+}
+
+.slice .hidden-arc {
+    fill: none;
+}
+
+.slice text {
+    pointer-events: none;
+    dominant-baseline: middle;
+    text-anchor: middle;
 }
 

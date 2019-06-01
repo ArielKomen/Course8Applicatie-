@@ -219,13 +219,22 @@ def article_maker():
 
                 article_list.append(Article(splitline[4], splitline[1], splitline[0], lijst[0], lijst[1]))
     else:
+        print(optie.get_combination_name())
         with open("/home/cole/Documents/course_8/weektaken/textmining applicatie/data/export ziektes en compounds") as bittergourd_disease:
             for line in bittergourd_disease:
                 splitline = line.rstrip("\n").split(";")
                 disease = splitline[3].replace("\"", "").split("AND")
-                disease = disease[0][:-1] + "_" + disease[1][1:]
+                # een lijst van compounds is true
+                # een lijst van diseases is false
+                # ik wil eerst een ziekte, en dan een compound
+                if optie.get_boolean() == False:
+                    disease = disease[0][:-1] + "_" + disease[1][1:]
+                else:
+                    disease = disease[1][1:] + "_" + disease[0][:-1]
                 #alles dat de goede naam heeft zetten in de article lijst om  te laten zien.
-                #print("dit is de combinatie naam: " + optie.get_combination_name())
+
+
+                #lijst[1] zijn de compounds en lijst[0] de ziektes
                 if disease == optie.get_combination_name():
                     lijst = disease.split("_")
                     article_list.append(Article(splitline[4], splitline[1], splitline[0], lijst[0], lijst[1]))

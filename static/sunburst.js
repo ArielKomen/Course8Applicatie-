@@ -91,7 +91,7 @@ var ru = (function ($, ru) {
                 svg = d3.select('#visualisatie').append('svg')
                     .style('width', '100%')
                     .style('height', '100vh')
-                    .attr('viewBox', `${width/2} ${-height / 2} ${width} ${height}`)
+                    .attr('viewBox', `${-width/2} ${-height / 2} ${width} ${height}`)
                     .on('click', () => ru.ariel.focusOn()); // Reset zoom on canvas click
 
                 var visualisatie_url = document.getElementById('visualisatie_data').innerHTML;

@@ -1,9 +1,13 @@
 from flask import Flask, render_template, request, jsonify
 from option import Option
 from Article_class import Article
-#globaal een object aanmaken om de optie van de gebruiker te onthouden van de
-optie = Option(True, "https://gist.githubusercontent.com/ArielKomen/99076738a5a169cfeab5f9d2f27c0a13/raw/07d3cc77be38647c0048e1ef9c2ab695e7fc5c16/data_bittergourd_compound_disease.json", "")
-#optie = option.set_boolean(False)
+import urllib.request, json
+
+# globaal een object aanmaken om de optie van de gebruiker te onthouden van de
+optie = Option(True,
+               "https://gist.githubusercontent.com/ArielKomen/99076738a5a169cfeab5f9d2f27c0a13/raw/07d3cc77be38647c0048e1ef9c2ab695e7fc5c16/data_bittergourd_compound_disease.json",
+               "")
+# optie = option.set_boolean(False)
 
 """
 code voor bittergourd_disease_compound
@@ -16,55 +20,52 @@ https://gist.githubusercontent.com/ArielKomen/99076738a5a169cfeab5f9d2f27c0a13/r
 
 app = Flask(__name__)
 
+
 @app.route('/webpage.html', methods=['GET'])
 def webpage_html():
     article_list = article_maker()
     # maakt een lijst van article objecten
     table_input = getTextData(article_list)
 
-    combinatie_lijst = maak_combinatie_lijst(optie)
-    html_lijst = zooi(combinatie_lijst)
+    html_lijst = make_combinatie_lijst()
     return render_template('webpage.html', input=html_lijst, input_b=table_input, data_url=optie.get_data_url())
 
 
-@app.route('/Help.html',methods=['GET'])
+@app.route('/Help.html', methods=['GET'])
 def help_html():
     return render_template('Help.html')
 
 
-@app.route('/Disclaimer.html',methods=['GET'])
+@app.route('/Disclaimer.html', methods=['GET'])
 def disc_html():
     return render_template('Disclaimer.html')
 
 
-@app.route('/About.html',methods=['GET'])
+@app.route('/About.html', methods=['GET'])
 def about_html():
     return render_template('About.html')
 
 
-
-@app.route('/output', methods = ['POST','GET'])
+@app.route('/output', methods=['POST', 'GET'])
 def output():
     if request.method == 'GET':
         combination_name = request.args['combination_name']
         combination_value = request.args['combination_value']
-        #print(combination_name, combination_value)
+        # print(combination_name, combination_value)
         optie.set_combination_name(combination_name)
 
         article_list = article_maker()
         # maakt een lijst van article objecten
         table_input = getTextData(article_list)
 
-        combinatie_lijst = maak_combinatie_lijst(optie)
-        html_lijst = zooi(combinatie_lijst)
+        html_lijst = make_combinatie_lijst()
         return render_template('webpage.html', input=html_lijst, input_b=table_input, data_url=optie.get_data_url())
+
 
 @app.route('/export', methods=['GET'])
 def export():
     if request.method == 'GET':
-
-        combinatie_lijst = maak_combinatie_lijst(optie)
-        html_lijst = zooi(combinatie_lijst)
+        html_lijst = make_combinatie_lijst()
 
         article_list = article_maker()
         # maakt een lijst van article objecten
@@ -80,138 +81,92 @@ def export():
 def main():
     if request.method == 'POST':
 
-        #een lijst van compounds is true
-        #een lijst van diseases is false
+        # een lijst van compounds is true
+        # een lijst van diseases is false
         user_answer = request.form['options']
         if user_answer == "Compound":
             optie.set_boolean(True)
-            optie.set_data_url("https://gist.githubusercontent.com/ArielKomen/99076738a5a169cfeab5f9d2f27c0a13/raw/07d3cc77be38647c0048e1ef9c2ab695e7fc5c16/data_bittergourd_compound_disease.json")
+            optie.set_data_url(
+                "https://gist.githubusercontent.com/ArielKomen/99076738a5a169cfeab5f9d2f27c0a13/raw/07d3cc77be38647c0048e1ef9c2ab695e7fc5c16/data_bittergourd_compound_disease.json")
         else:
             optie.set_boolean(False)
-            optie.set_data_url("https://gist.githubusercontent.com/ArielKomen/c35cdb735fa770542cd6494c2fdc179e/raw/89135f903086768c9f2e3e0bfb7ec23f28af55ab/data_bittergourd_disease_compound.json")
-        #print(user_answer)
+            optie.set_data_url(
+                "https://gist.githubusercontent.com/ArielKomen/c35cdb735fa770542cd6494c2fdc179e/raw/89135f903086768c9f2e3e0bfb7ec23f28af55ab/data_bittergourd_disease_compound.json")
+        # print(user_answer)
         print(optie.get_boolean())
         article_list = article_maker()
         # maakt een lijst van article objecten
         table_input = getTextData(article_list)
 
-        combinatie_lijst = maak_combinatie_lijst(optie)
-        html_lijst = zooi(combinatie_lijst)
+        # combinatie_lijst = maak_combinatie_lijst(optie)
+        # html_lijst = zooi(combinatie_lijst)
+        html_lijst = make_combinatie_lijst()
         return render_template('webpage.html', input=html_lijst, input_b=table_input, data_url=optie.get_data_url())
     if request.method == 'GET':
         article_list = article_maker()
         # maakt een lijst van article objecten
         table_input = getTextData(article_list)
 
-        combinatie_lijst = maak_combinatie_lijst(optie)
-        html_lijst = zooi(combinatie_lijst)
+        # combinatie_lijst = maak_combinatie_lijst(optie)
+        # html_lijst = zooi(combinatie_lijst)
+        html_lijst = make_combinatie_lijst()
         return render_template('webpage.html', input=html_lijst, input_b=table_input, data_url=optie.get_data_url())
 
-def maak_combinatie_lijst(optie):
-    compound_data = "data/compound lijst"
-    ziekte_data = "data/ziekte lijst"
 
+# returns a list of compounds with diseases as sublists OR a list of diseases with compounds as sublists
+def json_inlezen():
+    url = optie.get_data_url()
+    with urllib.request.urlopen(url) as url:
+        data = json.loads(url.read().decode())
+    return data["children"]
 
-    if optie.get_boolean() == False:
-        combinatie_lijst = make_compound_ziekte_combinatie_lijst(compound_data, ziekte_data)
-    else:
-        combinatie_lijst = make_ziekte_compound_combinatie_lijst(compound_data, ziekte_data)
-
-    return combinatie_lijst
-
-def make_compound_ziekte_combinatie_lijst(compound_data, ziekte_data):
-    # in deze functie er voor zorgen dat er een combinatielijst gemaakt wordt tussen ziekte en compound
-    combinatie_lijst = []
-    combinatie_dict = {}
-    ziekte_lijst = make_ziekte_lijst(ziekte_data)
-    compound_lijst = make_compound_lijst(compound_data)
-
-    for ziekte in ziekte_lijst[0:]:
-        combinatie_dict[ziekte] = compound_lijst[0:]
-        combinatie_lijst.append(combinatie_dict)
-        combinatie_dict = {}
-
-    return combinatie_lijst
-
-def make_ziekte_compound_combinatie_lijst(compound_data, ziekte_data):
-    # in deze functie er voor zorgen dat er een combinatielijst gemaakt wordt tussen compound en ziekte
-    combinatie_lijst = []
-    combinatie_dict = {}
-    ziekte_lijst = make_ziekte_lijst(ziekte_data)
-    compound_lijst = make_compound_lijst(compound_data)
-    for compound in compound_lijst[0:]:
-        combinatie_dict[compound] = ziekte_lijst[0:]
-        combinatie_lijst.append(combinatie_dict)
-        combinatie_dict = {}
-
-    return combinatie_lijst
-
-def make_ziekte_lijst(ziekte_data):
-    ziekte_lijst = []
-    for regel in open(ziekte_data):
-        regel = regel.strip()
-        if regel != "":
-            ziekte_lijst.append(regel)
-
-    return ziekte_lijst
-
-def make_compound_lijst(compound_data):
-    compound_lijst = []
-    for regel in open(compound_data):
-        regel = regel.strip()
-        if regel != "":
-            compound_lijst.append(regel)
-
-    return compound_lijst
-
-def zooi(combinatie_lijst):
+# returns a list with html tags with compounds and disease or with diseases and compounds
+def make_combinatie_lijst():
+    data = json_inlezen()
     html_lijst = []
-    opteller = 0
-    speciale_opteller = 0
+    compound_id = 0
+    disease_id = 0
 
-    # html_lijst.append('<ul>')
     html_lijst.append('<div class="btn-group-vertical">')
-    for item in combinatie_lijst:
-
-        html_lijst.append('<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Flask_applicatie_'+str(opteller)+ '" aria-expanded="false" aria-controls="Flask_applicatie">' + list(item.items())[0][0] + "</button>")
-        html_lijst.append('<div class ="collapse" id="Flask_applicatie_'+str(opteller)+'">')
+    for compound in data:
+        compound_naam = compound["name"]
+        html_lijst.append(
+            '<button class="btn btn-primary" type="button" data-toggle="collapse" aria-expanded="false" data-target="#Flask_applicatie_' + str(
+                compound_id) + '" aria-controls="Flask_applicatie">' + compound_naam + "</button>")
+        html_lijst.append('<div class ="collapse" id="Flask_applicatie_' + str(compound_id) + '">')
 
         html_lijst.append('<div class="card card-body">')
-        html_lijst.append('<div class="btn-group-vertical">')
-        for lijst in item.values():
-            for woord in lijst:
-                #<form action="/input_a" method="POST">
-                #html_lijst.append('<input type="submit" name="output" value="output_'+str(speciale_opteller)+'" >')
-                #html_lijst.append('<input type="button" name="ouput_'+str(speciale_opteller)+'" >')
-                html_lijst.append('<form action="/output" method="GET">')
-                #html_lijst.append('<input type="text" name="'+list(item.items())[0][0]+'_'+woord+' value='+str(speciale_opteller)+'">')
-                html_lijst.append('<div class="hidden">')
-                aapje = list(item.items())[0][0]+'_'+woord
-                html_lijst.append('<input type="text" name="combination_name" value="' + aapje + '">')
-                nootje = str(speciale_opteller)
-                html_lijst.append('<input type="text" name="combination_value" value="' + nootje + '">')
-                html_lijst.append('</div>')
-                html_lijst.append('<button type="submit" class="btn btn-secondary" value="'+list(item.items())[0][0]+'_'+woord+'">'+woord+'</button>')
-                html_lijst.append('</form>')
-                #html_lijst.append(woord)
-                #html_lijst.append('</li>')
-                speciale_opteller += 1
-        speciale_opteller = 0
+        html_lijst.append('<div class="btn-group-vertical" style="width: 100%">')
+        for disease in compound["children"]:
+            html_lijst.append('<form action="/output" method="GET">')
+            naam = disease["name"]
+            grootte = disease["size"]
+            html_lijst.append('<div class="d-none">')
+            html_lijst.append('<input type="text" name="combination_name" value="' + naam + '">')
+            html_lijst.append('<input type="text" name="combination_value" value="' + str(disease_id) + '">')
+
+            html_lijst.append('</div>')
+            html_lijst.append(
+                '<button type="submit" class="btn btn-secondary" value="' + compound_naam + "_" + naam + '">' + naam + " (" + str(
+                    grootte) + ")" + '</button> ')
+            html_lijst.append('</form>')
+            disease_id += 1
+        disease_id = 0
         html_lijst.append('</div>')
         html_lijst.append('</div>')
         html_lijst.append('</div>')
-        opteller += 1
+        compound_id += 1
     html_lijst.append('</div>')
-    #for item in html_lijst:
-        #print(item)
+
     return html_lijst
 
 def article_maker():
     article_list = []
     if optie.get_combination_name() == "":
-        with open("/home/cole/Documents/course_8/weektaken/flask_applicatie/data/export bitter gourd en ziektes") as bittergourd_disease:
+        with open(
+                "/home/cole/Documents/course_8/weektaken/flask_applicatie/data/export bitter gourd en ziektes") as bittergourd_disease:
             for line in bittergourd_disease:
-                #ervoor zorgen dat de ziekte en andere dingen worden opgeslagen in de article class.
+                # ervoor zorgen dat de ziekte en andere dingen worden opgeslagen in de article class.
                 splitline = line.rstrip("\n").split(";")
                 disease = splitline[3].replace("\"", "").split("AND")
                 disease = disease[0][:-1] + "_" + disease[1][1:]
@@ -220,7 +175,8 @@ def article_maker():
                 article_list.append(Article(splitline[4], splitline[1], splitline[0], lijst[0], lijst[1]))
     else:
         print(optie.get_combination_name())
-        with open("/home/cole/Documents/course_8/weektaken/textmining applicatie/data/export ziektes en compounds") as bittergourd_disease:
+        with open(
+                "/home/cole/Documents/course_8/weektaken/textmining applicatie/data/export ziektes en compounds") as bittergourd_disease:
             for line in bittergourd_disease:
                 splitline = line.rstrip("\n").split(";")
                 disease = splitline[3].replace("\"", "").split("AND")
@@ -231,15 +187,15 @@ def article_maker():
                     disease = disease[0][:-1] + "_" + disease[1][1:]
                 else:
                     disease = disease[1][1:] + "_" + disease[0][:-1]
-                #alles dat de goede naam heeft zetten in de article lijst om  te laten zien.
+                # alles dat de goede naam heeft zetten in de article lijst om  te laten zien.
 
-
-                #lijst[1] zijn de compounds en lijst[0] de ziektes
+                # lijst[1] zijn de compounds en lijst[0] de ziektes
                 if disease == optie.get_combination_name():
                     lijst = disease.split("_")
                     article_list.append(Article(splitline[4], splitline[1], splitline[0], lijst[0], lijst[1]))
 
     return article_list
+
 
 def getTextData(article_list):
     data_list = []
@@ -253,9 +209,8 @@ def getTextData(article_list):
         data_sublist.append(date)
         data_sublist.append(hyperlink)
         data_list.append(data_sublist)
-    #print(data_list)
+    # print(data_list)
     return data_list
-
 
 
 if __name__ == '__main__':

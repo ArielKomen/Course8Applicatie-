@@ -139,15 +139,15 @@ def make_combinatie_lijst():
         html_lijst.append('<div class="btn-group-vertical" style="width: 100%">')
         for disease in compound["children"]:
             html_lijst.append('<form action="/output" method="GET">')
-            naam = disease["name"]
+            disease_naam = disease["name"]
             grootte = disease["size"]
             html_lijst.append('<div class="d-none">')
-            html_lijst.append('<input type="text" name="combination_name" value="' + naam + '">')
+            html_lijst.append('<input type="text" name="combination_name" value="' +compound_naam+"_"+disease_naam+'">')
             html_lijst.append('<input type="text" name="combination_value" value="' + str(disease_id) + '">')
 
             html_lijst.append('</div>')
             html_lijst.append(
-                '<button type="submit" class="btn btn-secondary" value="' + compound_naam + "_" + naam + '">' + naam + " (" + str(
+                '<button type="submit" class="btn btn-secondary" value="' + compound_naam + "_" + disease_naam + '">' + disease_naam + " (" + str(
                     grootte) + ")" + '</button> ')
             html_lijst.append('</form>')
             disease_id += 1
@@ -164,7 +164,7 @@ def article_maker():
     article_list = []
     if optie.get_combination_name() == "":
         with open(
-                "/home/cole/Documents/course_8/weektaken/flask_applicatie/data/export bitter gourd en ziektes") as bittergourd_disease:
+                "data/export bitter gourd en ziektes") as bittergourd_disease:
             for line in bittergourd_disease:
                 # ervoor zorgen dat de ziekte en andere dingen worden opgeslagen in de article class.
                 splitline = line.rstrip("\n").split(";")
@@ -174,9 +174,8 @@ def article_maker():
 
                 article_list.append(Article(splitline[4], splitline[1], splitline[0], lijst[0], lijst[1]))
     else:
-        print(optie.get_combination_name())
         with open(
-                "/home/cole/Documents/course_8/weektaken/textmining applicatie/data/export ziektes en compounds") as bittergourd_disease:
+                "data/export ziektes en compounds") as bittergourd_disease:
             for line in bittergourd_disease:
                 splitline = line.rstrip("\n").split(";")
                 disease = splitline[3].replace("\"", "").split("AND")

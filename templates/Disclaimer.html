@@ -14,14 +14,15 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
 
-    <link rel="icon" type="image/png" href="/data/melon.png">
+    <link rel="icon" type="image/png" href="/static/melon.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='webpage.css') }}">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
 <div id="Disclaimer" class="upperbar">
-  <h1><div style="text-align: center;">Disclaimer</div></h1>
+  <h1 style="text-align: center;">Disclaimer</h1>
   <div style="text-align: center;">Welcome to the disclaimer page! This is where you'll find our disclaimers.</div>
 </div>
 <nav class="navbar navbar-expand-lg navbar-light primary-color">
@@ -46,40 +47,6 @@
 <p><small>&nbsp; </small></p>
 <hr>
 
-<style>
-body {font-family: "Lato", sans-serif;}
-body{
-	background-color: #efdaf1;
-}
-.tablink {
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 10px 16px;
-  font-size: 17px;
-  width: 25%;
-}
 
-li {
-  color: #A341B3;
-}
-
-li span{
-  color: white;
-}
-
-.tablink:hover {
-  background-color: #A341B3;
-}
-
-.upperbar {
-  background-color: #A341B3;
-  padding: 10px 16px;
-}
-
-</style>
 </body>
 </html> 

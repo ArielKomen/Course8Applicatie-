@@ -12,7 +12,8 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
 
-    <link rel="icon" type="image/png" href="/data/melon.png">
+    <link rel="icon" type="image/png" href="/static/melon.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='webpage.css') }}">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
@@ -22,9 +23,7 @@
 <body>
 
 <div id="About" class="upperbar">
-  <h1>
-      <div style="text-align: center;">About</div>
-  </h1>
+  <h1 style="text-align: center;">About</h1>
   <div style="text-align: center;">Welcome to the about page! This is where you'll find some extra information.</div>
 </div>
 <nav class="navbar navbar-expand-lg navbar-light primary-color">
@@ -85,40 +84,6 @@
 <button onclick="window.location.href = 'https://www.linkedin.com/in/ilse-den-brok/';">LinkedIn</button>
 <hr>
 
-<style>
-body {font-family: "Lato", sans-serif;}
-body{
-	background-color: #f1dadd;
-}
-.tablink {
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 10px 16px;
-  font-size: 17px;
-  width: 25%;
-}
 
-li {
-  color: #B34151;
-}
-
-li span{
-  color: white;
-}
-
-.tablink:hover {
-  background-color: #B34151;
-}
-
-.upperbar {
-  background-color: #B34151;
-  padding: 10px 16px;
-}
-
-</style>
 </body>
 </html> 

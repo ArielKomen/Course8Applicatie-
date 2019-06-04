@@ -20,7 +20,8 @@ https://gist.githubusercontent.com/ArielKomen/99076738a5a169cfeab5f9d2f27c0a13/r
 
 app = Flask(__name__)
 
-
+#als je op de home button klikt dan kom je hier terugecht. Dit is een
+#functie om de normale homepagina aan te roepen.
 @app.route('/webpage.html', methods=['GET'])
 def webpage_html():
     article_list = article_maker()
@@ -30,28 +31,28 @@ def webpage_html():
     html_lijst = make_combinatie_lijst()
     return render_template('webpage.html', input=html_lijst, input_b=table_input, data_url=optie.get_data_url())
 
-
+#functie om de help pagina aan te roepen.
 @app.route('/Help.html', methods=['GET'])
 def help_html():
     return render_template('Help.html')
 
-
+#functie om de disclaimer pagina aan te roepen.
 @app.route('/Disclaimer.html', methods=['GET'])
 def disc_html():
     return render_template('Disclaimer.html')
 
-
+#functie om de about pagina aan te roepen.
 @app.route('/About.html', methods=['GET'])
 def about_html():
     return render_template('About.html')
 
-
+#Een functie waarin de combinatie van de twee dimensionale tabel terug wordt gegeven
+#en deze wordt in de functie object gezet.
 @app.route('/output', methods=['POST', 'GET'])
 def output():
     if request.method == 'GET':
         combination_name = request.args['combination_name']
         combination_value = request.args['combination_value']
-        # print(combination_name, combination_value)
         optie.set_combination_name(combination_name)
 
         article_list = article_maker()
@@ -61,7 +62,8 @@ def output():
         html_lijst = make_combinatie_lijst()
         return render_template('webpage.html', input=html_lijst, input_b=table_input, data_url=optie.get_data_url())
 
-
+#een functie die wordt aangeroepen als je artikelen geselecteerd hebt
+#en deze artikelen komen hier terug als een lijst van pmid's.
 @app.route('/export', methods=['GET'])
 def export():
     if request.method == 'GET':
@@ -89,7 +91,8 @@ def export():
                     f.close()
         return render_template('webpage.html', input=html_lijst, input_b=table_input, data_url=optie.get_data_url()) and send_file('Selected_Literature.txt', attachment_filename="Selected_Literature.txt")
 
-
+#de methode die als eerst wordt geladen. De optie object wordt ingeladen met de goede boolean en de
+#goede url voor de gist wordt neergezet.
 @app.route('/', methods=['GET', 'POST'])
 def main():
     if request.method == 'POST':
@@ -105,7 +108,6 @@ def main():
             optie.set_boolean(False)
             optie.set_data_url(
                 "https://gist.githubusercontent.com/ArielKomen/c35cdb735fa770542cd6494c2fdc179e/raw/89135f903086768c9f2e3e0bfb7ec23f28af55ab/data_bittergourd_disease_compound.json")
-        # print(user_answer)
         print(optie.get_boolean())
         article_list = article_maker()
         # maakt een lijst van article objecten
@@ -135,7 +137,9 @@ def json_inlezen():
 
 # returns a list with html tags with compounds and disease or with diseases and compounds
 def make_combinatie_lijst():
+    #get the data.
     data = json_inlezen()
+    # een lijst waarin de html tags komen te staan, dit is overzichtelijker dan een string
     html_lijst = []
     compound_id = 0
     disease_id = 0
@@ -172,21 +176,15 @@ def make_combinatie_lijst():
     html_lijst.append('</div>')
 
     return html_lijst
-
+# een functie om de tabel te vullen
 def article_maker():
     article_list = []
+    #deze if statement retourneert een lege tabel
     if optie.get_combination_name() == "":
-        with open(
-                "data/export ziektes en bitter gourd") as bittergourd_disease:
-            for line in bittergourd_disease:
-                # ervoor zorgen dat de ziekte en andere dingen worden opgeslagen in de article class.
-                splitline = line.rstrip("\n").split(";")
-                disease = splitline[3].replace("\"", "").split("AND")
-                disease = disease[0][:-1] + "_" + disease[1][1:]
-                lijst = disease.split("_")
-
-                article_list.append(Article(splitline[4], splitline[1], splitline[0], lijst[0], lijst[1]))
+        return article_list
     else:
+        #aan de hand van de combinatie term uit het optie object worden
+        #de artikelen die hierbij horen in de tabel gezet.
         with open(
                 "data/export ziektes en compounds") as bittergourd_disease:
             for line in bittergourd_disease:
@@ -208,7 +206,7 @@ def article_maker():
 
     return article_list
 
-
+#in deze functie worden de artikelen in een twee dimensionale lijst gezet.
 def getTextData(article_list):
     data_list = []
     for i in article_list:
@@ -221,7 +219,6 @@ def getTextData(article_list):
         data_sublist.append(date)
         data_sublist.append(hyperlink)
         data_list.append(data_sublist)
-    # print(data_list)
     return data_list
 
 

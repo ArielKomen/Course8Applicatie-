@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<link rel="icon" type="image/png" href="/data/melon.png">
+<link rel="icon" type="image/png" href="/static/melon.png">
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -14,18 +14,19 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
 
-    <link rel="icon" type="image/png" href="/data/melon.png">
+    <link rel="icon" type="image/png" href="/static/melon.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='webpage.css') }}">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
 <div id="Disclaimer" class="upperbar">
-  <h1><div style="text-align: center;">Help</div></h1>
+  <h1 style="text-align: center;">Help</h1>
   <div style="text-align: center;">Welcome to the help page! This is where we'll explain how the home page works.</div>
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+<nav class="navbar navbar-expand-lg navbar-light primary-color">
     <div id="buttonbar" class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item"><a class="nav-link" href="webpage.html"><span>Home</span></a></li>
@@ -51,39 +52,6 @@
 <p><small>&nbsp; The bitter gourd (<i>Momordica charantia</i>) is a fruit/vegetable known for its extremely bitter taste, as well as its many health benefits.</small></p>
 <hr>
 
-<style>
-body {font-family: "Lato", sans-serif;}
-body{
-	background-color: #daddf1;
-}
-.tablink {
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 10px 16px;
-  font-size: 17px;
-  width: 25%;
-}
 
-li {
-  color: #4151B3;
-}
-
-li span{
-  color: white;
-}
-
-.tablink:hover {
-  background-color: #4151B3;
-}
-
-.upperbar {
-  padding: 10px 16px;
-  background-color: #4151B3;
-}
-</style>
 </body>
 </html> 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="data/melon.png">
+    <link rel="icon" type="image/png" href="/static/melon.png">
 
     <!--     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">-->
     <!-- Latest compiled and minified CSS -->
@@ -61,15 +61,15 @@ aanvinken die je wil exporteren. Het liefst dit doen op een manier zoals uniprot
 <!--hier staat de code voor een uitklapbare lijst -->
 <div class="container">
     <div class="row">
-        <!--3,3,6 --->
+        <!--3 column width,3 column width,6 column width--->
         <div class="col-md-3">
 
-            <!--d2 tabel -->
+            <!--d2 tabel wordt hier gemaakt-->
             <div class="container"
                  style="width:100%; min-height: 500px; background-color:lightblue; display:inline-block;">
+                <!--de |safe in regel zorgt ervoor dat alles met een <b></b> bold wordt, ik weet niet hoe maar het werkt -->
                 {% for regel in input %}
                     {{ regel|safe }}
-                    <!--de |safe in regel zorgt ervoor dat alles met een <b></b> bold wordt, ik weet niet hoe maar het werkt -->
                 {% endfor %}
             </div>
         </div>
@@ -90,7 +90,8 @@ aanvinken die je wil exporteren. Het liefst dit doen op een manier zoals uniprot
         </div>
         <div class="col-md-6">
             <div id="visualisatie" style="height:500px; width:100%;">
-                <!--plek waar het script staat -->
+                <!--javascript code wordt hieraangeroepen met een url variabele
+                die verwijst naar gist op git-->
             </div>
             <div class="d-none" id="visualisatie_data">
                 {{ data_url }}
@@ -100,6 +101,7 @@ aanvinken die je wil exporteren. Het liefst dit doen op een manier zoals uniprot
         </div>
     </div>
     <hr/>
+    <!--code om de tabel er mooi uit te laten zien en om data in de tabel te zetten. -->
     <div class="row mt-4">
         <h2 class="text-center">Literature about selected disease</h2>
     <div class="row">
@@ -144,10 +146,10 @@ aanvinken die je wil exporteren. Het liefst dit doen op een manier zoals uniprot
     </div>
 </div>
 
+<!--footer met daarin een copyright -->
 <footer class="page-footer font-small" style="background-color: lightseagreen">
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2019 Copyright
-    </div>
+    <div class="footer-copyright text-center py-3">© 2019 Copyright</div>
     <!-- Copyright -->
 </footer>
 

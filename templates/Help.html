@@ -1,33 +1,53 @@
 <!DOCTYPE html>
 <html>
-<link rel="icon" type="image/png" href="melon.png">
+<link rel="icon" type="image/png" href="/data/melon.png">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <link rel="icon" type="image/png" href="/data/melon.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
 <div id="Disclaimer" class="upperbar">
-  <h1><center>Help</center></h1>
-  <p><center>Welcome to the help page! This is where we'll explain how the home page works.</center></p> 
+  <h1><div style="text-align: center;">Help</div></h1>
+  <div style="text-align: center;">Welcome to the help page! This is where we'll explain how the home page works.</div>
 </div>
 
-<button class="tablink" id="defaultOpen"><li><a href="webpage.html"><span>Home</span></a></li></button>
-<button class="tablink" ><li><a href="Help.html"><span>Help</span></a></li></button>
-<button class="tablink" ><li><a href="Disclaimer.html"><span>Disclaimer</span></a></li></button>
-<button class="tablink" ><li><a href="About.html"><span>About</span></a></li></button>
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+    <div id="buttonbar" class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="webpage.html"><span>Home</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="Help.html"><span>Help</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="Disclaimer.html"><span>Disclaimer</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="About.html"><span>About</span></a></li>
+        </ul>
+    </div>
+</nav>
 
 <hr>
 <h1>Help page</h1>
-<p><img src="bittermelon.png" width="25" height="25">What does the <strong>sunburst</strong> display?</p>
+<p><img src="/static/bittermelon.png " width="25" height="25">What does the <strong>sunburst</strong> display?</p>
 <p><small>&nbsp; The sunburst on our the home page displays pubmed articles. The inner circle represents the bittermelon, our vegetable/fruit of choice. You can change the meaning of the second circle to either diseases or compounds. If you choose for the second circle to be diseases the third circle will stand for the compounds. When you click on the disease you're interested in the sunburst will show what compounds are in the pubmed articles that are about bitter gourd and that specific disease.</small></p>
 <hr>
-<p><img src="bittermelon.png" width="25" height="25">How do I interact with the <strong>sunburst</strong>?</p>
+<p><img src="/static/bittermelon.png" width="25" height="25">How do I interact with the <strong>sunburst</strong>?</p>
 <p><small>&nbsp; To interact with our sunburst you first select what you want the second and third circle to mean with the buttons on the left. After that you click on the disease/compound that you're interested in in either the second circle of the sunburst or the menu on the left. At last you click on the disease/compound that you're interested in in either the third circle of the sunburst or the menu on the left. You will be given a list of pubmed articles containing this disease and compound together with the bitter gourd itself. </small></p>
 <hr>
-<p><img src="bittermelon.png" width="25" height="25">What are the different <strong>tabs</strong>?</p>
+<p><img src="/static/bittermelon.png" width="25" height="25">What are the different <strong>tabs</strong>?</p>
 <p><small>&nbsp; On the home page you will find the sunburst diagram and buttons to interact with. On this page you will find some text that might help you navigate. On the disclaimer page you will find some disclaimers regarding our application and the database it interacts with. On the about page you will find some information about this projects and the people that worked on it.</small></p>
 <hr>
-<p><img src="bittermelon.png" width="25" height="25">What is a <strong>bitter melon</strong>?</p>
+<p><img src="/static/bittermelon.png" width="25" height="25">What is a <strong>bitter melon</strong>?</p>
 <p><small>&nbsp; The bitter gourd (<i>Momordica charantia</i>) is a fruit/vegetable known for its extremely bitter taste, as well as its many health benefits.</small></p>
 <hr>
 

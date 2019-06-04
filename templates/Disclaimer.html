@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html>
-<link rel="icon" type="image/png" href="melon.png">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <link rel="icon" type="image/png" href="/data/melon.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
 <div id="Disclaimer" class="upperbar">
-  <h1><center>Disclaimer</center></h1>
-  <p><center>Welcome to the disclaimer page! This is where you'll find our disclaimers.</center></p>
+  <h1><div style="text-align: center;">Disclaimer</div></h1>
+  <div style="text-align: center;">Welcome to the disclaimer page! This is where you'll find our disclaimers.</div>
 </div>
-
-<button class="tablink" id="defaultOpen"><li><a href="webpage.html"><span>Home</span></a></li></button>
-<button class="tablink" ><li><a href="Help.html"><span>Help</span></a></li></button>
-<button class="tablink" ><li><a href="Disclaimer.html"><span>Disclaimer</span></a></li></button>
-<button class="tablink" ><li><a href="About.html"><span>About</span></a></li></button>
+<nav class="navbar navbar-expand-lg navbar-light primary-color">
+    <div id="buttonbar" class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="webpage.html"><span>Home</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="Help.html"><span>Help</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="Disclaimer.html"><span>Disclaimer</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="About.html"><span>About</span></a></li>
+        </ul>
+    </div>
+</nav>
 
 <hr>
 <h1>Disclaimer page</h1>
-<p><img src="bittermelon.png" width="25" height="25"><strong>Database</strong> disclaimers:</p>
+<p><img src="/static/bittermelon.png" width="25" height="25"><strong>Database</strong> disclaimers:</p>
 <p><small>&nbsp; Our database has last been updated on ...</small></p>
 <p><small>&nbsp; </small></p>
 <hr>
-<p><img src="bittermelon.png" width="25" height="25"><strong>Sunburst</strong> disclaimers:</p>
+<p><img src="/static/bittermelon.png" width="25" height="25"><strong>Sunburst</strong> disclaimers:</p>
 <p><small>&nbsp; Our sunburst diagram ...</small></p>
 <p><small>&nbsp; </small></p>
 <hr>

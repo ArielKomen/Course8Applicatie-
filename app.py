@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from Flask import Flask, render_template, request, jsonify
 from option import Option
 from Article_class import Article
 import urllib.request, json

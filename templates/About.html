@@ -1,39 +1,85 @@
 <!DOCTYPE html>
 <html>
-<link rel="icon" type="image/png" href="melon.png">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <link rel="icon" type="image/png" href="/data/melon.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 
 <body>
-<div id="About" class="upperbar">
-  <h1><center>About</center></h1>
-  <p><center>Welcome to the about page! This is where you'll find some extra information.</center></p>
-</div>
 
-<button class="tablink" id="defaultOpen"><li><a href="webpage.html"><span>Home</span></a></li></button>
-<button class="tablink" ><li><a href="Help.html"><span>Help</span></a></li></button>
-<button class="tablink" ><li><a href="Disclaimer.html"><span>Disclaimer</span></a></li></button>
-<button class="tablink" ><li><a href="About.html"><span>About</span></a></li></button>
+<div id="About" class="upperbar">
+  <h1>
+      <div style="text-align: center;">About</div>
+  </h1>
+  <div style="text-align: center;">Welcome to the about page! This is where you'll find some extra information.</div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light primary-color">
+    <div id="buttonbar" class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="webpage.html"><span>Home</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="Help.html"><span>Help</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="Disclaimer.html"><span>Disclaimer</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="About.html"><span>About</span></a></li>
+        </ul>
+    </div>
+</nav>
+
 
 <hr>
 <h1>About page</h1>
 <p><strong>Get to know our team!</strong></p>
 <p><small>&nbsp; We are all students in our second year of the bio-informatics study.</small></p>
 <hr>
-<p><img src="bittermelon.png" width="25" height="25">Stephan Gui</p>
+<p><img src="/static/Stefan_plaatje.png" width="100" height="100">Stephan Gui</p>
+<p>Things done for the project:</p>
+    <ul>
+        <li>processed the articles </li>
+        <li>made the .json files</li>
+    </ul>
 <p><small>&nbsp; </small></p>
 <p><small>&nbsp; </small></p>
 <hr>
-<p><img src="bittermelon.png" width="25" height="25">Jung Ho Loos</p>
+<p><img src="/static/Jung_Ho_plaatje.png" width="100" height="100">Jung Ho Loos</p>
+<p>Things done for the project:</p>
+    <ul>
+        <li>made the article table</li>
+    </ul>
 <p><small>&nbsp; </small></p>
 <p><small>&nbsp; </small></p>
 <hr>
-<p><img src="bittermelon.png" width="25" height="25">Ariël Komen</p>
+<p><img src="/static/ariel_plaatje.png" alt=" plaatje van Ariel " width="100" height="100" />Ariël Komen</p>
+<p>Things done for the project:</p>
+    <ul>
+        <li>Made the textmining script</li>
+        <li>Set the sunburst on the webpage</li>
+        <li>Made the two dimensional table </li>
+        <li>Made it able to change between compound and disease or disease and compound</li>
+        <li>The sunburst is able to change between compound and disease <b>or</b> disease and compound</li>
+        <li>The table gets articles based on what combination you clicked in, in the table </li>
+    </ul>
 <p><small>&nbsp; </small></p>
 <p><small>&nbsp; </small></p>
 <hr>
-<p><img src="bittermelon.png" width="25" height="25">Ilse den Brok</p>
+<p><img src="/static/ilse_plaatje.png" width="100" height="100">Ilse den Brok</p>
+<p>Things done for the project:</p>
+    <ul>
+        <li>wrote the About, disclaimer and help page </li>
+        <li>made the head and initial html layout</li>
+    </ul>
 <p><small>&nbsp; </small></p>
 <p><small> </small></p>
 <button onclick="window.location.href = 'https://www.linkedin.com/in/ilse-den-brok/';">LinkedIn</button>

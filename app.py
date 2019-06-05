@@ -7,7 +7,6 @@ import re
 optie = Option(True,
                "https://gist.githubusercontent.com/ArielKomen/99076738a5a169cfeab5f9d2f27c0a13/raw/07d3cc77be38647c0048e1ef9c2ab695e7fc5c16/data_bittergourd_compound_disease.json",
                "")
-# optie = option.set_boolean(False)
 
 """
 code voor bittergourd_disease_compound
@@ -20,10 +19,14 @@ https://gist.githubusercontent.com/ArielKomen/99076738a5a169cfeab5f9d2f27c0a13/r
 
 app = Flask(__name__)
 
-#als je op de home button klikt dan kom je hier terugecht. Dit is een
-#functie om de normale homepagina aan te roepen.
+
 @app.route('/webpage.html', methods=['GET'])
 def webpage_html():
+    """
+    als je op de home button klikt dan kom je hier terugecht. Dit is een
+    functie om de normale homepagina aan te roepen.
+    :return: de normale webpagina.
+    """
     article_list = article_maker()
     # maakt een lijst van article objecten
     table_input = getTextData(article_list)
@@ -31,25 +34,41 @@ def webpage_html():
     html_lijst = make_combinatie_lijst()
     return render_template('webpage.html', input=html_lijst, input_b=table_input, data_url=optie.get_data_url())
 
-#functie om de help pagina aan te roepen.
+
 @app.route('/Help.html', methods=['GET'])
 def help_html():
+    """
+    functie om de help pagina aan te roepen.
+    :return: de help pagina.
+    """
     return render_template('Help.html')
 
-#functie om de disclaimer pagina aan te roepen.
+
 @app.route('/Disclaimer.html', methods=['GET'])
 def disc_html():
+    """
+    functie om de disclaimer pagina aan te roepen.
+    :return: de disclaimer pagina
+    """
     return render_template('Disclaimer.html')
 
-#functie om de about pagina aan te roepen.
+
 @app.route('/About.html', methods=['GET'])
 def about_html():
+    """
+    functie om de about pagina aan te roepen.
+    :return: de about html pagina.
+    """
     return render_template('About.html')
 
-#Een functie waarin de combinatie van de twee dimensionale tabel terug wordt gegeven
-#en deze wordt in de functie object gezet.
+
 @app.route('/output', methods=['POST', 'GET'])
 def output():
+    """
+    Een functie waarin de combinatie van de twee dimensionale tabel terug wordt gegeven
+    en deze wordt in de functie object gezet.
+    :return: de normale pagina met gegevens voor de tabel
+    """
     if request.method == 'GET':
         combination_name = request.args['combination_name']
         combination_value = request.args['combination_value']
@@ -62,10 +81,14 @@ def output():
         html_lijst = make_combinatie_lijst()
         return render_template('webpage.html', input=html_lijst, input_b=table_input, data_url=optie.get_data_url())
 
-#een functie die wordt aangeroepen als je artikelen geselecteerd hebt
-#en deze artikelen komen hier terug als een lijst van pmid's.
+
 @app.route('/export', methods=['GET'])
 def export():
+    """
+    een functie die wordt aangeroepen als je artikelen geselecteerd hebt
+    en deze artikelen komen hier terug als een lijst van pmid's.
+    :return: de normale pagina samen met een pagina waar je de geselecteerde pagina's kan downloaden.
+    """
     if request.method == 'GET':
         html_lijst = make_combinatie_lijst()
         article_list = article_maker()
@@ -91,10 +114,15 @@ def export():
                     f.close()
         return render_template('webpage.html', input=html_lijst, input_b=table_input, data_url=optie.get_data_url()) and send_file('Selected_Literature.txt', attachment_filename="Selected_Literature.txt")
 
-#de methode die als eerst wordt geladen. De optie object wordt ingeladen met de goede boolean en de
-#goede url voor de gist wordt neergezet.
+
+
 @app.route('/', methods=['GET', 'POST'])
 def main():
+    """
+    de methode die als eerst wordt geladen. De optie object wordt ingeladen met de goede boolean en de
+    goede url voor de gist wordt neergezet.
+    :return: de webpagina met: een lijst met html tags, tabel input en een url om data uit op te halen.
+    """
     if request.method == 'POST':
 
         # een lijst van compounds is true
@@ -128,15 +156,23 @@ def main():
         return render_template('webpage.html', input=html_lijst, input_b=table_input, data_url=optie.get_data_url())
 
 
-# returns a list of compounds with diseases as sublists OR a list of diseases with compounds as sublists
+
 def json_inlezen():
+    """
+    returns a list of compounds with diseases as sublists OR a list of diseases with compounds as sublists
+    :return: een dictionary met ziektes of compounds
+    """
     url = optie.get_data_url()
     with urllib.request.urlopen(url) as url:
         data = json.loads(url.read().decode())
     return data["children"]
 
-# returns a list with html tags with compounds and disease or with diseases and compounds
+
 def make_combinatie_lijst():
+    """
+    returns a list with html tags with compounds and disease or with diseases and compounds
+    :return: een lijst met html tags die geprint worden in de html code met een jinja loop
+    """
     #get the data.
     data = json_inlezen()
     # een lijst waarin de html tags komen te staan, dit is overzichtelijker dan een string
@@ -176,8 +212,12 @@ def make_combinatie_lijst():
     html_lijst.append('</div>')
 
     return html_lijst
-# een functie om de tabel te vullen
+
 def article_maker():
+    """
+    een functie die de data genereert om de tabel te vullen.
+    :return: een lijst met artikel objecten.
+    """
     article_list = []
     #deze if statement retourneert een lege tabel
     if optie.get_combination_name() == "":
@@ -206,8 +246,13 @@ def article_maker():
 
     return article_list
 
-#in deze functie worden de artikelen in een twee dimensionale lijst gezet.
+
 def getTextData(article_list):
+    """
+    in deze functie worden de artikelen in een twee dimensionale lijst gezet.
+    :param article_list:
+    :return: een lijst om in de tabel met  te zetten.
+    """
     data_list = []
     for i in article_list:
         data_sublist = []

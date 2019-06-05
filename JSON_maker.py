@@ -18,6 +18,7 @@ def main():
     """
     article_list, disease_dictionary, compound_dictionary = article_maker()
     JSON_maker(article_list, disease_dictionary, compound_dictionary)
+
 def article_maker():
     """
     The function of article_maker is to parse articles created with the text mining
@@ -72,9 +73,9 @@ def JSON_maker(article_list, disease_dictionary, compound_dictionary):
     """
     The function of JSON_maker is to create a JSON file which can be visualised by the sunburst script.
 
-    :param article_list:
-    :param disease_dictionary:
-    :param compound_dictionary:
+    :param article_list: The article list contains a list of all the article objects.
+    :param disease_dictionary: The disease_dictionary contains all the unique diseases as keys and a number as value.
+    :param compound_dictionary: The compound_dictionary contains all unique compounds as keys and a number as value.
     :return: The function returns two JSON files.
              Bittergourd_disease_compound.json
                 {"name": "Bittergourd", "children":[{"name": "disease","children"[{"name":"compound", "size": int}]}]}

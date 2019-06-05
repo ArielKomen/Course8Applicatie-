@@ -14,9 +14,9 @@ def bestanden_inlezen():
     bitter gourd is lijst[2]
     """
     d2_lijst = []
-    lijst_met_bestandspaden = ["/home/cole/Documents/course_8/weektaken/textmining applicatie/data/ziekte lijst",
-                               "/home/cole/Documents/course_8/weektaken/textmining applicatie/data/compound lijst",
-                               "/home/cole/Documents/course_8/weektaken/textmining applicatie/data/bitter gourd lijst"]
+    lijst_met_bestandspaden = ["data/ziekte lijst",
+                               "data/compound lijst",
+                               "data/bitter gourd lijst"]
 
     for bestandspad in lijst_met_bestandspaden:
         lijst = generiek_bestand_inlezen(bestandspad)
@@ -44,7 +44,7 @@ def pubmed_zoeken(d2_lijst):
 
     data_lijst = kies_data_lijst(d2_lijst)
 
-    Entrez.email = "A.komen@student.han.nl"
+    Entrez.email = "student@student.han.nl"
 
     for zoekterm in data_lijst[0:]:
         count = get_count(zoekterm)
@@ -186,7 +186,7 @@ def get_info(idlist, export_lijst, term):
 
 def schrijf_data_weg(export_lijst):
     # in deze methode de data wegschrijven naar een tekstbestandje
-    bestand = open("/home/cole/Documents/course_8/weektaken/textmining applicatie/data/export ziektes en compounds", "a")
+    bestand = open("data/export ziektes en compounds", "a")
 
     for lijst in export_lijst:
         regel = lijst[0]+";"+lijst[1]+";"+lijst[2]+";"+lijst[3]+";"+lijst[4]+"\n"

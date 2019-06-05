@@ -22,11 +22,11 @@ class Article:
         return self.__title
     def get_date(self):
         return self.__date
-    def get_pmid(self, pmid):
+    def get_pmid(self):
         return self.__pmid
-    def get_ziekte(self, ziekte):
+    def get_ziekte(self):
         return self.__ziekte
-    def get_compound(self, compound):
+    def get_compound(self):
         return self.__compound
     def get_all_attributes(self):
         return self.__title, self.__date, self.__pmid, self.__ziekte, self.__compound

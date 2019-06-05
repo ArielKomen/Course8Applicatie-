@@ -1,9 +1,9 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_file
 from option import Option
 from Article_class import Article
 import urllib.request, json
-
-# een object aanmaken om de optie van de gebruiker te onthouden
+import re
+# globaal een object aanmaken om de optie van de gebruiker te onthouden van de
 optie = Option(True,
                "https://gist.githubusercontent.com/ArielKomen/99076738a5a169cfeab5f9d2f27c0a13/raw/07d3cc77be38647c0048e1ef9c2ab695e7fc5c16/data_bittergourd_compound_disease.json",
                "")
@@ -91,15 +91,28 @@ def export():
     """
     if request.method == 'GET':
         html_lijst = make_combinatie_lijst()
-
         article_list = article_maker()
         # maakt een lijst van article objecten
         table_input = getTextData(article_list)
         # article_list is de lijst van article objecten die gevisualiseerd wordt,
         # table_input zijn de gegevens die uit object articles worden gehaald
         selection = str(request.args.getlist('Selected'))
-        print(selection)
-        return render_template('webpage.html', input=html_lijst, input_b=table_input, data_url=optie.get_data_url())
+        selection = selection.split(" ")
+        for pmid in range(len(selection)):
+            selection[pmid] = re.sub(r"\D", " ", selection[pmid])
+            selection[pmid] = selection[pmid].replace(" ","")
+        for pmid in selection:
+            for description in table_input:
+                if pmid in description[2]:
+                    f = open("Selected_Literature.txt", "a")
+                    f.write(description[0])
+                    f.write(", ")
+                    f.write(description[1])
+                    f.write(", ")
+                    f.write(description[2])
+                    f.write("\n")
+                    f.close()
+        return render_template('webpage.html', input=html_lijst, input_b=table_input, data_url=optie.get_data_url()) and send_file('Selected_Literature.txt', attachment_filename="Selected_Literature.txt")
 
 
 

@@ -256,7 +256,7 @@ def getTextData(article_list):
     data_list = []
     for i in article_list:
         data_sublist = []
-        pmid = i.get_pmid(i)
+        pmid = i.get_pmid()
         title = i.get_title()
         date = i.get_date()
         hyperlink = 'https://www.ncbi.nlm.nih.gov/pubmed/' + pmid
